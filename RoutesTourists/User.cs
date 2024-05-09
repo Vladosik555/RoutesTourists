@@ -17,5 +17,7 @@ public partial class User
 
     public string IdAccount { get; set; } = null!;
 
+    public string? AnotherRoutes { get; set; }
+
     public virtual Account IdAccountNavigation { get; set; } = null!;
 }

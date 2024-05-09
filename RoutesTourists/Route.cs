@@ -24,4 +24,10 @@ public partial class Route
     public string? Hotels { get; set; }
 
     public string? Flight { get; set; }
+
+    public string? Description { get; set; }
+
+    public string? Marks { get; set; }
+
+    public int? Likes { get; set; }
 }
