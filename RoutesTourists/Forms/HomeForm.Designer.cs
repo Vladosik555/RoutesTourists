@@ -30,7 +30,7 @@
         {
             EntryLabel = new Label();
             label2 = new Label();
-            LoginButton = new Button();
+            RecommenButton = new Button();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -59,18 +59,19 @@
             label2.Size = new Size(10, 373);
             label2.TabIndex = 42;
             // 
-            // LoginButton
+            // RecommenButton
             // 
-            LoginButton.BackColor = Color.Cyan;
-            LoginButton.FlatAppearance.BorderSize = 0;
-            LoginButton.FlatStyle = FlatStyle.Flat;
-            LoginButton.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            LoginButton.Location = new Point(12, 102);
-            LoginButton.Name = "LoginButton";
-            LoginButton.Size = new Size(191, 36);
-            LoginButton.TabIndex = 43;
-            LoginButton.Text = "Рекомендации";
-            LoginButton.UseVisualStyleBackColor = false;
+            RecommenButton.BackColor = Color.Cyan;
+            RecommenButton.FlatAppearance.BorderSize = 0;
+            RecommenButton.FlatStyle = FlatStyle.Flat;
+            RecommenButton.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            RecommenButton.Location = new Point(12, 102);
+            RecommenButton.Name = "RecommenButton";
+            RecommenButton.Size = new Size(191, 36);
+            RecommenButton.TabIndex = 43;
+            RecommenButton.Text = "Рекомендации";
+            RecommenButton.UseVisualStyleBackColor = false;
+            RecommenButton.Click += RecommenButton_Click;
             // 
             // button1
             // 
@@ -148,7 +149,7 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(LoginButton);
+            Controls.Add(RecommenButton);
             Controls.Add(label2);
             Controls.Add(EntryLabel);
             Name = "HomeForm";
@@ -160,7 +161,7 @@
 
         private Label EntryLabel;
         private Label label2;
-        private Button LoginButton;
+        private Button RecommenButton;
         private Button button1;
         private Button button2;
         private Button button3;

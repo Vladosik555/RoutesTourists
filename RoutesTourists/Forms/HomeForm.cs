@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoutesTourists.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace RoutesTourists
         public HomeForm()
         {
             InitializeComponent();
+        }
+
+        private void RecommenButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            RecommenForm recommenForm = new RecommenForm();
+            recommenForm.ShowDialog();
         }
     }
 }

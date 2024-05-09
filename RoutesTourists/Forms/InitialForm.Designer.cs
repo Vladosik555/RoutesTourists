@@ -86,7 +86,7 @@
             MainPanel.Dock = DockStyle.Fill;
             MainPanel.Location = new Point(0, 0);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(903, 558);
+            MainPanel.Size = new Size(900, 528);
             MainPanel.TabIndex = 3;
             MainPanel.Resize += MainPanel_Resize;
             // 
@@ -95,7 +95,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(903, 558);
+            ClientSize = new Size(900, 528);
             Controls.Add(MainPanel);
             Margin = new Padding(3, 4, 3, 4);
             Name = "InitialForm";

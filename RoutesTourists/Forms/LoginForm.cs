@@ -58,11 +58,11 @@ namespace RoutesTourists
         {
             using (var context = new RoutesForTouristsContext())
             {
-                if(loginField.Text == string.Empty || loginField.Text.Equals("Введите логин"))
+                if (loginField.Text == string.Empty || loginField.Text.Equals("Введите логин"))
                 {
                     MessageBox.Show("Поле для логина обязательно для заполнения");
                 }
-                if(passwordField.Text == string.Empty || passwordField.Text.Equals("Введите пароль"))
+                if (passwordField.Text == string.Empty || passwordField.Text.Equals("Введите пароль"))
                 {
                     MessageBox.Show("Поле для пароля обязательно для заполнения");
                 }
@@ -91,6 +91,14 @@ namespace RoutesTourists
             this.Close();
             InitialForm initialForm = new InitialForm();
             initialForm.Show();
+        }
+
+        private void LoginForm_Resize(object sender, EventArgs e)
+        {
+            //LoginButton.Top = (int)(MainPanel.Height * 0.63);
+            //LoginButton.Left = (int)(MainPanel.Width * 0.31);
+            //BackButton.Top = (int)(MainPanel.Height * 0.63) + LoginButton.Height + 28;
+            //BackButton.Left = (int)(MainPanel.Width * 0.35);
         }
     }
 }
