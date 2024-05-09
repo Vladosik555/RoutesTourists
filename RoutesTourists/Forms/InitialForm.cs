@@ -9,6 +9,7 @@ namespace RoutesTourists
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            //Hello
             this.Hide();
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
