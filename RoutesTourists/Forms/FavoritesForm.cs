@@ -23,7 +23,7 @@ namespace RoutesTourists.Forms
         {
             using (var context = new RoutesForTouristsContext())
             {
-                var currUser = context.Users.FirstOrDefault(r => r.Equals(CurrentUser.currentUser.IdUser));
+                var currUser = context.Users.FirstOrDefault(r => r.IdUser.Equals(CurrentUser.currentUser.IdUser));
                 if (currUser == null)
                 {
                     MessageBox.Show("Ошибка в подключении к базе данных");
