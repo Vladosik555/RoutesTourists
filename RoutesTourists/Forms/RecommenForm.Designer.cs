@@ -58,8 +58,10 @@
             // 
             // richTextBoxRoute
             // 
+            richTextBoxRoute.BackColor = Color.White;
             richTextBoxRoute.Location = new Point(208, 43);
             richTextBoxRoute.Name = "richTextBoxRoute";
+            richTextBoxRoute.ReadOnly = true;
             richTextBoxRoute.Size = new Size(420, 312);
             richTextBoxRoute.TabIndex = 2;
             richTextBoxRoute.Text = "";
@@ -118,6 +120,7 @@
             BackButton.TabIndex = 6;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
+            BackButton.Click += BackButton_Click;
             // 
             // RecommenForm
             // 

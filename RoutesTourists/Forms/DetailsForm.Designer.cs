@@ -39,6 +39,8 @@
             budgetLabel = new Label();
             durationRichTextBox = new RichTextBox();
             budgetRichTextBox = new RichTextBox();
+            likeButton = new Button();
+            deleteButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureRoute).BeginInit();
             SuspendLayout();
             // 
@@ -121,7 +123,7 @@
             // 
             budgetLabel.AutoSize = true;
             budgetLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            budgetLabel.Location = new Point(0, 353);
+            budgetLabel.Location = new Point(0, 339);
             budgetLabel.Name = "budgetLabel";
             budgetLabel.Size = new Size(73, 21);
             budgetLabel.TabIndex = 8;
@@ -139,11 +141,43 @@
             // budgetRichTextBox
             // 
             budgetRichTextBox.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            budgetRichTextBox.Location = new Point(153, 350);
+            budgetRichTextBox.Location = new Point(153, 339);
             budgetRichTextBox.Name = "budgetRichTextBox";
             budgetRichTextBox.Size = new Size(476, 30);
             budgetRichTextBox.TabIndex = 10;
             budgetRichTextBox.Text = "";
+            // 
+            // likeButton
+            // 
+            likeButton.BackColor = Color.Cyan;
+            likeButton.Enabled = false;
+            likeButton.FlatAppearance.BorderSize = 0;
+            likeButton.FlatStyle = FlatStyle.Flat;
+            likeButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            likeButton.Location = new Point(529, 375);
+            likeButton.Name = "likeButton";
+            likeButton.Size = new Size(100, 30);
+            likeButton.TabIndex = 11;
+            likeButton.Text = "Оценить";
+            likeButton.UseVisualStyleBackColor = false;
+            likeButton.Visible = false;
+            likeButton.Click += likeButton_Click;
+            // 
+            // deleteButton
+            // 
+            deleteButton.BackColor = Color.Cyan;
+            deleteButton.Enabled = false;
+            deleteButton.FlatAppearance.BorderSize = 0;
+            deleteButton.FlatStyle = FlatStyle.Flat;
+            deleteButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            deleteButton.Location = new Point(406, 375);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(100, 30);
+            deleteButton.TabIndex = 12;
+            deleteButton.Text = "Удалить";
+            deleteButton.UseVisualStyleBackColor = false;
+            deleteButton.Visible = false;
+            deleteButton.Click += deleteButton_Click;
             // 
             // DetailsForm
             // 
@@ -151,6 +185,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(634, 411);
+            Controls.Add(deleteButton);
+            Controls.Add(likeButton);
             Controls.Add(budgetRichTextBox);
             Controls.Add(durationRichTextBox);
             Controls.Add(budgetLabel);
@@ -183,5 +219,7 @@
         private Label budgetLabel;
         private RichTextBox durationRichTextBox;
         private RichTextBox budgetRichTextBox;
+        private Button likeButton;
+        private Button deleteButton;
     }
 }

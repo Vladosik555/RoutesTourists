@@ -9,7 +9,7 @@ public partial class Route
 
     public string Name { get; set; } = null!;
 
-    public string Duration { get; set; } = null!;
+    public int Duration { get; set; }
 
     public int Budget { get; set; }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace RoutesTourists.Classes
@@ -31,6 +32,16 @@ namespace RoutesTourists.Classes
                 }
             }
             return false;
+        }
+        public static string GetAllNumber(string input)
+        {
+            MatchCollection matches = Regex.Matches(input, @"\d+");
+            StringBuilder result = new StringBuilder();
+            foreach (Match match in matches)
+            {
+                result.Append(match.Value).Append(" ");
+            }
+            return result.ToString().Trim();
         }
     }
 }

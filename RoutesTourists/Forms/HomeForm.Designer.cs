@@ -31,8 +31,8 @@
             EntryLabel = new Label();
             label2 = new Label();
             RecommenButton = new Button();
-            button1 = new Button();
-            button2 = new Button();
+            FavoritesButton = new Button();
+            CharacteristicsButton = new Button();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
@@ -73,31 +73,33 @@
             RecommenButton.UseVisualStyleBackColor = false;
             RecommenButton.Click += RecommenButton_Click;
             // 
-            // button1
+            // FavoritesButton
             // 
-            button1.BackColor = Color.Cyan;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button1.Location = new Point(12, 160);
-            button1.Name = "button1";
-            button1.Size = new Size(191, 36);
-            button1.TabIndex = 44;
-            button1.Text = "Избранное";
-            button1.UseVisualStyleBackColor = false;
+            FavoritesButton.BackColor = Color.Cyan;
+            FavoritesButton.FlatAppearance.BorderSize = 0;
+            FavoritesButton.FlatStyle = FlatStyle.Flat;
+            FavoritesButton.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            FavoritesButton.Location = new Point(12, 160);
+            FavoritesButton.Name = "FavoritesButton";
+            FavoritesButton.Size = new Size(191, 36);
+            FavoritesButton.TabIndex = 44;
+            FavoritesButton.Text = "Избранное";
+            FavoritesButton.UseVisualStyleBackColor = false;
+            FavoritesButton.Click += FavoritesButton_Click;
             // 
-            // button2
+            // CharacteristicsButton
             // 
-            button2.BackColor = Color.Cyan;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button2.Location = new Point(12, 221);
-            button2.Name = "button2";
-            button2.Size = new Size(191, 36);
-            button2.TabIndex = 45;
-            button2.Text = "Характеристики";
-            button2.UseVisualStyleBackColor = false;
+            CharacteristicsButton.BackColor = Color.Cyan;
+            CharacteristicsButton.FlatAppearance.BorderSize = 0;
+            CharacteristicsButton.FlatStyle = FlatStyle.Flat;
+            CharacteristicsButton.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            CharacteristicsButton.Location = new Point(12, 221);
+            CharacteristicsButton.Name = "CharacteristicsButton";
+            CharacteristicsButton.Size = new Size(191, 36);
+            CharacteristicsButton.TabIndex = 45;
+            CharacteristicsButton.Text = "Характеристики";
+            CharacteristicsButton.UseVisualStyleBackColor = false;
+            CharacteristicsButton.Click += CharacteristicsButton_Click;
             // 
             // button3
             // 
@@ -147,8 +149,8 @@
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(CharacteristicsButton);
+            Controls.Add(FavoritesButton);
             Controls.Add(RecommenButton);
             Controls.Add(label2);
             Controls.Add(EntryLabel);
@@ -162,8 +164,8 @@
         private Label EntryLabel;
         private Label label2;
         private Button RecommenButton;
-        private Button button1;
-        private Button button2;
+        private Button FavoritesButton;
+        private Button CharacteristicsButton;
         private Button button3;
         private Button button4;
         private Button button5;
