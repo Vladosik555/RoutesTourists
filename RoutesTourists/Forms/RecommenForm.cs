@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace RoutesTourists.Forms
 {
@@ -31,7 +32,7 @@ namespace RoutesTourists.Forms
                     MessageBox.Show("Маршруты не были найдены");
                     return;
                 }
-                var PopularRoute = PopupalRoutes.OrderByDescending(u => u.AverageMark).ToList();
+                var PopularRoute = PopupalRoutes.OrderByDescending(u => u.Likes).ToList();
                 var firstPopularRoute = PopularRoute[0];
                 NameLabel.Text = firstPopularRoute.Name;
                 richTextBoxRoute.Text = firstPopularRoute.Description;
@@ -92,11 +93,26 @@ namespace RoutesTourists.Forms
         {
             if (flag)
             {
-                if(CurrentRoutes.currentRoutes.Count - 1 > count)
+                if (CurrentRoutes.currentRoutes.Count - 1 > count)
                 {
-
+                    NameLabel.Text = CurrentRoutes.currentRoutes[count].Description;
+                    richTextBoxRoute.Text = CurrentRoutes.currentRoutes[count].Description;
+                    if (CurrentRoutes.currentRoutes[count].Photo != null)
+                    {
+                        MemoryStream memoryStream = new MemoryStream(CurrentRoutes.currentRoutes[count].Photo);
+                        pictureRoute.Image = Image.FromStream(memoryStream);
+                        CurrentRoute.currentRoute = CurrentRoutes.currentRoutes[count];
+                    }
                 }
             }
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            CurrentRoutes.currentRoutes = null;
+            this.Close();
+            HomeForm homeForm = new HomeForm();
+            homeForm.ShowDialog();
         }
     }
 }

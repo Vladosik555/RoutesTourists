@@ -24,5 +24,19 @@ namespace RoutesTourists
             RecommenForm recommenForm = new RecommenForm();
             recommenForm.ShowDialog();
         }
+
+        private void CharacteristicsButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            CharacteristicsForm characteristicsForm = new CharacteristicsForm();
+            characteristicsForm.ShowDialog();
+        }
+
+        private void FavoritesButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FavoritesForm favoritesForm = new FavoritesForm();
+            favoritesForm.ShowDialog();
+        }
     }
 }
