@@ -99,6 +99,7 @@ namespace RoutesTourists
             //LoginButton.Left = (int)(MainPanel.Width * 0.31);
             //BackButton.Top = (int)(MainPanel.Height * 0.63) + LoginButton.Height + 28;
             //BackButton.Left = (int)(MainPanel.Width * 0.35);
+            //в
         }
     }
 }
