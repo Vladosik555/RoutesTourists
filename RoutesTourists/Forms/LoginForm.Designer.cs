@@ -46,17 +46,16 @@
             EntryLabel.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             EntryLabel.Location = new Point(0, 0);
             EntryLabel.Name = "EntryLabel";
-            EntryLabel.Size = new Size(467, 96);
+            EntryLabel.Size = new Size(900, 103);
             EntryLabel.TabIndex = 0;
             EntryLabel.Text = "Вход";
             EntryLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // passwordLabel
             // 
-            passwordLabel.Anchor = AnchorStyles.None;
             passwordLabel.AutoSize = true;
             passwordLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            passwordLabel.Location = new Point(58, 137);
+            passwordLabel.Location = new Point(273, 137);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new Size(116, 35);
             passwordLabel.TabIndex = 9;
@@ -64,10 +63,9 @@
             // 
             // passwordField
             // 
-            passwordField.Anchor = AnchorStyles.None;
             passwordField.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             passwordField.ForeColor = Color.Gray;
-            passwordField.Location = new Point(58, 176);
+            passwordField.Location = new Point(273, 176);
             passwordField.Margin = new Padding(3, 4, 3, 4);
             passwordField.Name = "passwordField";
             passwordField.Size = new Size(372, 38);
@@ -78,10 +76,10 @@
             // 
             // loginLabel
             // 
-            loginLabel.Anchor = AnchorStyles.None;
             loginLabel.AutoSize = true;
+            loginLabel.BackColor = Color.Transparent;
             loginLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            loginLabel.Location = new Point(58, 33);
+            loginLabel.Location = new Point(273, 33);
             loginLabel.Name = "loginLabel";
             loginLabel.Size = new Size(99, 35);
             loginLabel.TabIndex = 7;
@@ -89,10 +87,9 @@
             // 
             // loginField
             // 
-            loginField.Anchor = AnchorStyles.None;
             loginField.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             loginField.ForeColor = Color.Gray;
-            loginField.Location = new Point(58, 72);
+            loginField.Location = new Point(273, 72);
             loginField.Margin = new Padding(3, 4, 3, 4);
             loginField.Name = "loginField";
             loginField.Size = new Size(372, 38);
@@ -103,12 +100,11 @@
             // 
             // LoginButton
             // 
-            LoginButton.Anchor = AnchorStyles.None;
             LoginButton.BackColor = Color.Cyan;
             LoginButton.FlatAppearance.BorderSize = 0;
             LoginButton.FlatStyle = FlatStyle.Flat;
             LoginButton.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            LoginButton.Location = new Point(138, 272);
+            LoginButton.Location = new Point(350, 279);
             LoginButton.Margin = new Padding(3, 4, 3, 4);
             LoginButton.Name = "LoginButton";
             LoginButton.Size = new Size(178, 60);
@@ -119,12 +115,11 @@
             // 
             // BackButton
             // 
-            BackButton.Anchor = AnchorStyles.None;
             BackButton.BackColor = Color.Cyan;
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(159, 361);
+            BackButton.Location = new Point(372, 347);
             BackButton.Margin = new Padding(3, 4, 3, 4);
             BackButton.Name = "BackButton";
             BackButton.Size = new Size(138, 39);
@@ -142,9 +137,9 @@
             MainPanel.Controls.Add(loginLabel);
             MainPanel.Controls.Add(passwordLabel);
             MainPanel.Dock = DockStyle.Fill;
-            MainPanel.Location = new Point(0, 96);
+            MainPanel.Location = new Point(0, 103);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(467, 452);
+            MainPanel.Size = new Size(900, 425);
             MainPanel.TabIndex = 12;
             // 
             // LoginForm
@@ -152,12 +147,14 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(467, 548);
+            ClientSize = new Size(900, 528);
             Controls.Add(MainPanel);
             Controls.Add(EntryLabel);
             Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(400, 490);
             Name = "LoginForm";
             Text = "LoginForm";
+            Load += LoginForm_Load;
             Resize += LoginForm_Resize;
             MainPanel.ResumeLayout(false);
             MainPanel.PerformLayout();

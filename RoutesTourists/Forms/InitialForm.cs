@@ -5,11 +5,11 @@ namespace RoutesTourists
         public InitialForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            //Hello
             this.Hide();
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
@@ -36,6 +36,11 @@ namespace RoutesTourists
             pictureBox1.Height = (int)(MainPanel.Height * 0.5);
             pictureBox1.Top = (int)(MainPanel.Height * 0.1);
             pictureBox1.Left = (int)(MainPanel.Width * 0.3);
+        }
+
+        private void InitialForm_Load(object sender, EventArgs e)
+        {
+            ClientSize = new Size(918, 575);
         }
     }
 }

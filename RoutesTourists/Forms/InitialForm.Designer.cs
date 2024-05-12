@@ -98,8 +98,10 @@
             ClientSize = new Size(900, 528);
             Controls.Add(MainPanel);
             Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(400, 490);
             Name = "InitialForm";
             Text = "InitialForm";
+            Load += InitialForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             MainPanel.ResumeLayout(false);
             ResumeLayout(false);

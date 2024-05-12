@@ -16,6 +16,7 @@ namespace RoutesTourists
         public RegistrForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void LoginField_Enter(object sender, EventArgs e)
@@ -210,6 +211,37 @@ namespace RoutesTourists
             this.Close();
             InitialForm initialForm = new InitialForm();
             initialForm.Show();
+        }
+
+        private void RegistrForm_Load(object sender, EventArgs e)
+        {
+            ClientSize = new Size(918, 575);
+        }
+
+        private void RegistrForm_Resize(object sender, EventArgs e)
+        {
+
+            loginLabel.Top = (int)((MainPanel.Height + 103) * 0.07);
+            loginLabel.Left = (int)(MainPanel.Width * 0.06);
+            LoginField.Top = (int)((MainPanel.Height + 103) * 0.07) + loginLabel.Height + 3;
+            LoginField.Left = (int)(MainPanel.Width * 0.06);
+            LoginField.Width = (int)(MainPanel.Width * 0.4);
+            passwordLabel.Top = (int)((MainPanel.Height + 103) * 0.07) + loginLabel.Height + LoginField.Height + 30;
+            passwordLabel.Left = (int)(MainPanel.Width * 0.06);
+            passwordField.Top = (int)((MainPanel.Height + 103) * 0.07) + loginLabel.Height + LoginField.Height + passwordLabel.Height + 30;
+            passwordField.Left = (int)(MainPanel.Width * 0.06);
+            passwordField.Width = (int)(MainPanel.Width * 0.4);
+            //не успел остальное
+
+
+            RegistrButton.Width = (int)((MainPanel.Width - 20) * 0.39);
+            RegistrButton.Height = (int)((MainPanel.Height + 103) * 0.115);
+            RegistrButton.Top = (int)((MainPanel.Height + 103) * 0.6);
+            RegistrButton.Left = (int)(MainPanel.Width * 0.3);
+            BackButton.Width = (int)((MainPanel.Width - 20) * 0.3);
+            BackButton.Height = (int)((MainPanel.Height + 103) * 0.075);
+            BackButton.Top = (int)((MainPanel.Height + 103) * 0.6) + RegistrButton.Height + 8;
+            BackButton.Left = (int)(MainPanel.Width * 0.35);
         }
     }
 }
