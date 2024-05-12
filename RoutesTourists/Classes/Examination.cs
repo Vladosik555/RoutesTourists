@@ -21,6 +21,18 @@ namespace RoutesTourists.Classes
             return true;
         }
 
+        public static bool CheckNumber(string numbers)
+        {
+            foreach (char number in numbers)
+            {
+                if (!Char.IsNumber(number))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public static bool CheckFormatMail(string mail)
         {
             MailList emailList = new MailList();
@@ -35,13 +47,17 @@ namespace RoutesTourists.Classes
         }
         public static string GetAllNumber(string input)
         {
-            MatchCollection matches = Regex.Matches(input, @"\d+");
-            StringBuilder result = new StringBuilder();
-            foreach (Match match in matches)
+            if(input != null)
             {
-                result.Append(match.Value).Append(" ");
+                MatchCollection matches = Regex.Matches(input, @"\d+");
+                StringBuilder result = new StringBuilder();
+                foreach (Match match in matches)
+                {
+                    result.Append(match.Value).Append(" ");
+                }
+                return result.ToString().Trim();
             }
-            return result.ToString().Trim();
+            return null;
         }
     }
 }

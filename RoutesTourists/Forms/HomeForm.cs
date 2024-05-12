@@ -38,5 +38,12 @@ namespace RoutesTourists
             FavoritesForm favoritesForm = new FavoritesForm();
             favoritesForm.ShowDialog();
         }
+
+        private void MySelectedButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MyCollectionsForm myCollectionsForm = new MyCollectionsForm();
+            myCollectionsForm.ShowDialog();
+        }
     }
 }

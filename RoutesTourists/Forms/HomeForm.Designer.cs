@@ -34,7 +34,7 @@
             FavoritesButton = new Button();
             CharacteristicsButton = new Button();
             button3 = new Button();
-            button4 = new Button();
+            MySelectedButton = new Button();
             button5 = new Button();
             SuspendLayout();
             // 
@@ -114,18 +114,19 @@
             button3.Text = "Подборки";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // MySelectedButton
             // 
-            button4.BackColor = Color.Cyan;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button4.Location = new Point(12, 350);
-            button4.Name = "button4";
-            button4.Size = new Size(191, 36);
-            button4.TabIndex = 47;
-            button4.Text = "Свои подборки";
-            button4.UseVisualStyleBackColor = false;
+            MySelectedButton.BackColor = Color.Cyan;
+            MySelectedButton.FlatAppearance.BorderSize = 0;
+            MySelectedButton.FlatStyle = FlatStyle.Flat;
+            MySelectedButton.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            MySelectedButton.Location = new Point(12, 350);
+            MySelectedButton.Name = "MySelectedButton";
+            MySelectedButton.Size = new Size(191, 36);
+            MySelectedButton.TabIndex = 47;
+            MySelectedButton.Text = "Свои подборки";
+            MySelectedButton.UseVisualStyleBackColor = false;
+            MySelectedButton.Click += MySelectedButton_Click;
             // 
             // button5
             // 
@@ -147,7 +148,7 @@
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
             Controls.Add(button5);
-            Controls.Add(button4);
+            Controls.Add(MySelectedButton);
             Controls.Add(button3);
             Controls.Add(CharacteristicsButton);
             Controls.Add(FavoritesButton);
@@ -167,7 +168,7 @@
         private Button FavoritesButton;
         private Button CharacteristicsButton;
         private Button button3;
-        private Button button4;
+        private Button MySelectedButton;
         private Button button5;
     }
 }

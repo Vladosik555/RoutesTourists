@@ -19,6 +19,8 @@ public partial class RoutesForTouristsContext : DbContext
 
     public virtual DbSet<Route> Routes { get; set; }
 
+    public virtual DbSet<Selection> Selections { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -37,6 +39,14 @@ public partial class RoutesForTouristsContext : DbContext
             entity
                 .HasNoKey()
                 .ToTable("Route");
+
+            entity.Property(e => e.Likes).HasDefaultValue(0);
+            entity.Property(e => e.LikesSelection).HasDefaultValue(0);
+        });
+
+        modelBuilder.Entity<Selection>(entity =>
+        {
+            entity.ToTable("Selection");
         });
 
         modelBuilder.Entity<User>(entity =>

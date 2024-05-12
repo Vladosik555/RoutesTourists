@@ -1,6 +1,6 @@
 ﻿namespace RoutesTourists.Forms
 {
-    partial class FavoritesForm
+    partial class SelectionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FavoritesLabel = new Label();
-            FavoriteTable = new DataGridView();
+            EntryLabel = new Label();
+            SelectionTable = new DataGridView();
             BackButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)FavoriteTable).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SelectionTable).BeginInit();
             SuspendLayout();
             // 
-            // FavoritesLabel
+            // EntryLabel
             // 
-            FavoritesLabel.BackColor = Color.Cyan;
-            FavoritesLabel.Dock = DockStyle.Top;
-            FavoritesLabel.Font = new Font("Times New Roman", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            FavoritesLabel.Location = new Point(0, 0);
-            FavoritesLabel.Name = "FavoritesLabel";
-            FavoritesLabel.Size = new Size(443, 78);
-            FavoritesLabel.TabIndex = 2;
-            FavoritesLabel.Text = "Избранное";
-            FavoritesLabel.TextAlign = ContentAlignment.MiddleCenter;
+            EntryLabel.BackColor = Color.Cyan;
+            EntryLabel.Dock = DockStyle.Top;
+            EntryLabel.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            EntryLabel.Location = new Point(0, 0);
+            EntryLabel.Name = "EntryLabel";
+            EntryLabel.Size = new Size(504, 72);
+            EntryLabel.TabIndex = 1;
+            EntryLabel.Text = "Мои подборки";
+            EntryLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // FavoriteTable
+            // SelectionTable
             // 
-            FavoriteTable.AllowUserToAddRows = false;
-            FavoriteTable.BackgroundColor = Color.White;
-            FavoriteTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            FavoriteTable.Location = new Point(0, 77);
-            FavoriteTable.Name = "FavoriteTable";
-            FavoriteTable.ReadOnly = true;
-            FavoriteTable.Size = new Size(443, 331);
-            FavoriteTable.TabIndex = 3;
-            FavoriteTable.CellDoubleClick += FavoriteTable_CellDoubleClick;
+            SelectionTable.AllowUserToAddRows = false;
+            SelectionTable.BackgroundColor = Color.White;
+            SelectionTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            SelectionTable.Location = new Point(0, 75);
+            SelectionTable.Name = "SelectionTable";
+            SelectionTable.ReadOnly = true;
+            SelectionTable.Size = new Size(504, 345);
+            SelectionTable.TabIndex = 4;
+            SelectionTable.CellDoubleClick += SelectionTable_CellDoubleClick;
             // 
             // BackButton
             // 
@@ -65,34 +65,34 @@
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(154, 414);
+            BackButton.Location = new Point(189, 440);
             BackButton.Name = "BackButton";
             BackButton.Size = new Size(121, 29);
-            BackButton.TabIndex = 12;
+            BackButton.TabIndex = 13;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
             BackButton.Click += BackButton_Click;
             // 
-            // FavoritesForm
+            // SelectionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(443, 444);
+            ClientSize = new Size(504, 471);
             Controls.Add(BackButton);
-            Controls.Add(FavoriteTable);
-            Controls.Add(FavoritesLabel);
-            Name = "FavoritesForm";
-            Text = "FavoritesForm";
-            Load += FavoritesForm_Load;
-            ((System.ComponentModel.ISupportInitialize)FavoriteTable).EndInit();
+            Controls.Add(SelectionTable);
+            Controls.Add(EntryLabel);
+            Name = "SelectionForm";
+            Text = "SelectionForm";
+            Load += SelectionForm_Load;
+            ((System.ComponentModel.ISupportInitialize)SelectionTable).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Label FavoritesLabel;
-        private DataGridView FavoriteTable;
+        private Label EntryLabel;
+        private DataGridView SelectionTable;
         private Button BackButton;
     }
 }

@@ -30,4 +30,6 @@ public partial class Route
     public string? Marks { get; set; }
 
     public int? Likes { get; set; }
+
+    public int? LikesSelection { get; set; }
 }

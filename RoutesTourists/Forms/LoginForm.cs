@@ -61,10 +61,12 @@ namespace RoutesTourists
                 if (loginField.Text == string.Empty || loginField.Text.Equals("Введите логин"))
                 {
                     MessageBox.Show("Поле для логина обязательно для заполнения");
+                    return;
                 }
                 if (passwordField.Text == string.Empty || passwordField.Text.Equals("Введите пароль"))
                 {
                     MessageBox.Show("Поле для пароля обязательно для заполнения");
+                    return;
                 }
                 string password = Hash.CalculateMD5Hash(passwordField.Text);
                 var account = context.Accounts.FirstOrDefault(r => r.Login.Equals(loginField.Text) && r.Password.Equals(password));

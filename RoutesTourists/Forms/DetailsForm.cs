@@ -25,12 +25,28 @@ namespace RoutesTourists.Forms
                 MessageBox.Show("Данный маршрут не был найден");
                 return;
             }
-            if (CurrentUser.currentUser.AnotherRoutes.Split(",").Contains(CurrentRoute.currentRoute.Id))
+            if(CurrentUser.currentUser.AnotherRoutes != null)
             {
-                deleteButton.Enabled = true;
-                deleteButton.Visible = true;
+                if (CurrentUser.currentUser.AnotherRoutes.Equals(CurrentRoute.currentRoute.Id))
+                {
+                    deleteButton.Enabled = true;
+                    deleteButton.Visible = true;
+                }
+                else
+                {
+                    if (CurrentUser.currentUser.AnotherRoutes.Split(",").Contains(CurrentRoute.currentRoute.Id))
+                    {
+                        deleteButton.Enabled = true;
+                        deleteButton.Visible = true;
+                    }
+                    else
+                    {
+                        likeButton.Enabled = true;
+                        likeButton.Visible = true;
+                    }
+                }
             }
-            else
+            if(CurrentUser.currentUser.AnotherRoutes == null)
             {
                 likeButton.Enabled = true;
                 likeButton.Visible = true;
@@ -63,10 +79,13 @@ namespace RoutesTourists.Forms
                     MessageBox.Show("Данный маршрут не был найден");
                     return;
                 }
-                if (currRoure.Id.Split(",").Contains(currUser.AnotherRoutes))
+                if(currUser.AnotherRoutes != string.Empty)
                 {
-                    MessageBox.Show("Нельзя оценить аккаунт более одного раза");
-                    return;
+                    if (currUser.AnotherRoutes.Split(",").Contains(currRoure.Id))
+                    {
+                        MessageBox.Show("Нельзя оценить аккаунт более одного раза");
+                        return;
+                    }
                 }
                 if (currRoure.Likes == null)
                 {
@@ -78,7 +97,7 @@ namespace RoutesTourists.Forms
                 }
                 else
                 {
-                    currUser.AnotherRoutes = "," + currRoure.Id.ToString();
+                    currUser.AnotherRoutes += "," + currRoure.Id.ToString();
                 }
                 currRoure.Likes++;
                 context.SaveChanges();

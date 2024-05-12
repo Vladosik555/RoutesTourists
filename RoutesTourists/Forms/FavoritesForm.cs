@@ -30,12 +30,15 @@ namespace RoutesTourists.Forms
                     return;
                 }
                 List<Route> favoritesRoutes = new List<Route>();
-                foreach (string idAnother in currUser.AnotherRoutes.Split(","))
+                if(currUser.AnotherRoutes != null)
                 {
-                    var favotiteRoute = context.Routes.FirstOrDefault(r => r.Id.Equals(idAnother));
-                    if (favotiteRoute != null)
+                    foreach (string idAnother in currUser.AnotherRoutes.Split(","))
                     {
-                        favoritesRoutes.Add(favotiteRoute);
+                        var favotiteRoute = context.Routes.FirstOrDefault(r => r.Id.Equals(idAnother));
+                        if (favotiteRoute != null)
+                        {
+                            favoritesRoutes.Add(favotiteRoute);
+                        }
                     }
                 }
                 CurrentRoutes.currentRoutes = favoritesRoutes;

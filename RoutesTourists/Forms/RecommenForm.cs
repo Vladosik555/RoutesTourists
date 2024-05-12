@@ -61,10 +61,13 @@ namespace RoutesTourists.Forms
                     MessageBox.Show("Данный маршрут не был найден");
                     return;
                 }
-                if (currRoure.Id.Split(",").Contains(currUser.AnotherRoutes))
+                if(currUser.AnotherRoutes != null)
                 {
-                    MessageBox.Show("Нельзя оценить аккаунт более одного раза");
-                    return;
+                    if (currUser.AnotherRoutes.Split(",").Contains(currRoure.Id))
+                    {
+                        MessageBox.Show("Нельзя оценить аккаунт более одного раза");
+                        return;
+                    }
                 }
                 if (currRoure.Likes == null)
                 {
@@ -76,10 +79,11 @@ namespace RoutesTourists.Forms
                 }
                 else
                 {
-                    currUser.AnotherRoutes = "," + currRoure.Id.ToString();
+                    currUser.AnotherRoutes += "," + currRoure.Id.ToString();
                 }
                 currRoure.Likes++;
                 context.SaveChanges();
+                MessageBox.Show("Данный маршрут был добавлен в избранное");
             }
         }
 
@@ -95,13 +99,18 @@ namespace RoutesTourists.Forms
             {
                 if (CurrentRoutes.currentRoutes.Count - 1 > count)
                 {
+                    count++;
                     NameLabel.Text = CurrentRoutes.currentRoutes[count].Description;
                     richTextBoxRoute.Text = CurrentRoutes.currentRoutes[count].Description;
+                    CurrentRoute.currentRoute = CurrentRoutes.currentRoutes[count];
                     if (CurrentRoutes.currentRoutes[count].Photo != null)
                     {
                         MemoryStream memoryStream = new MemoryStream(CurrentRoutes.currentRoutes[count].Photo);
                         pictureRoute.Image = Image.FromStream(memoryStream);
-                        CurrentRoute.currentRoute = CurrentRoutes.currentRoutes[count];
+                    }
+                    else
+                    {
+                        pictureRoute.Image = null;
                     }
                 }
             }
