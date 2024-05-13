@@ -21,12 +21,13 @@ namespace RoutesTourists.Forms
         public CharacteristicsForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
         private void GetRoutes(int start_duration, int end_duration, int start_budget, int end_budget, string seasonality)
         {
             using (var context = new RoutesForTouristsContext())
             {
-                if(seasonality != null)
+                if (seasonality != null)
                 {
                     var routes = context.Routes.Where(r => r.Seasonality.Equals(seasonality) && r.Duration >= start_duration &&
                     r.Duration <= end_duration && r.Budget >= start_budget && r.Budget <= end_budget).ToList();
@@ -39,6 +40,7 @@ namespace RoutesTourists.Forms
         private void CharacteristicsForm_Load(object sender, EventArgs e)
         {
             FilteredTable.DataSource = Tables.GetCharacteristicsTable(CurrentRoutes.currentRoutes);
+            ClientSize = new Size(918, 575);
         }
 
         private void FilteredTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -63,7 +65,7 @@ namespace RoutesTourists.Forms
 
         private void startDuration_TextChanged(object sender, EventArgs e)
         {
-            if(startDuration.Text != string.Empty)
+            if (startDuration.Text != string.Empty)
             {
                 if (Examination.CheckNumber(startDuration.Text))
                 {
@@ -86,7 +88,7 @@ namespace RoutesTourists.Forms
 
         private void endDuration_TextChanged(object sender, EventArgs e)
         {
-            if(endDuration.Text != string.Empty)
+            if (endDuration.Text != string.Empty)
             {
                 if (Examination.CheckNumber(endDuration.Text))
                 {
@@ -109,7 +111,7 @@ namespace RoutesTourists.Forms
 
         private void startBudget_TextChanged(object sender, EventArgs e)
         {
-            if(startBudget.Text != string.Empty)
+            if (startBudget.Text != string.Empty)
             {
                 if (Examination.CheckNumber(startBudget.Text))
                 {
@@ -132,7 +134,7 @@ namespace RoutesTourists.Forms
 
         private void endBudget_TextChanged(object sender, EventArgs e)
         {
-            if(endBudget.Text != string.Empty)
+            if (endBudget.Text != string.Empty)
             {
                 if (Examination.CheckNumber(endBudget.Text))
                 {
@@ -157,6 +159,39 @@ namespace RoutesTourists.Forms
         {
             seasonality = seasonalityComboBox.Text.ToString();
             GetRoutes(start_duration, end_duration, start_budget, end_budget, seasonality);
+        }
+
+        private void CharacteristicsForm_Resize(object sender, EventArgs e)
+        {
+            FilteredTable.Height = (int)((MainPanel.Height + 103) * 0.55);
+            BackButton.Width = (int)((MainPanel.Width - 20) * 0.3);
+            BackButton.Height = (int)((MainPanel.Height + 103) * 0.075);
+            BackButton.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height + 50;
+            BackButton.Left = (int)(MainPanel.Width * 0.35);
+            durationLabel.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height - 55;
+            durationLabel.Left = (int)(MainPanel.Width * 0.1);
+            startLabel.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height;
+            startLabel.Left = (int)(MainPanel.Width * 0.07);
+            startDuration.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height;
+            startDuration.Left = (int)(MainPanel.Width * 0.07) + 48;
+            endLabel.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height;
+            endLabel.Left = (int)(MainPanel.Width * 0.07) + 105;
+            endDuration.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height;
+            endDuration.Left = (int)(MainPanel.Width * 0.07) + 150;
+            startLabel_1.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height;
+            startLabel_1.Left = (int)(MainPanel.Width * 0.07) + 210;
+            startBudget.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height;
+            startBudget.Left = (int)(MainPanel.Width * 0.07) + 255;
+            endLabel_1.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height;
+            endLabel_1.Left = (int)(MainPanel.Width * 0.07) + 370;
+            endBudget.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height;
+            endBudget.Left = (int)(MainPanel.Width * 0.07) + 415;
+            seasonalityComboBox.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height;
+            seasonalityComboBox.Left = (int)(MainPanel.Width * 0.07) + 550;
+            budgetLabel.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height - 55;
+            budgetLabel.Left = (int)(MainPanel.Width * 0.1) + 250;
+            seasonalityLabel.Top = (int)((MainPanel.Height + 103) * 0.1) + FilteredTable.Height - 55;
+            seasonalityLabel.Left = (int)(MainPanel.Width * 0.1) + 515;
         }
     }
 }

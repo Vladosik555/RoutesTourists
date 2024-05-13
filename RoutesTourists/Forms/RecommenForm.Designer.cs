@@ -28,129 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureRoute = new PictureBox();
-            NameLabel = new Label();
-            richTextBoxRoute = new RichTextBox();
-            ВetailsButton = new Button();
-            NextButton = new Button();
-            likeButton = new Button();
+            MainPanel = new Panel();
             BackButton = new Button();
+            likeButton = new Button();
+            NextButton = new Button();
+            ВetailsButton = new Button();
+            richTextBoxRoute = new RichTextBox();
+            NameLabel = new Label();
+            pictureRoute = new PictureBox();
+            MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureRoute).BeginInit();
             SuspendLayout();
             // 
-            // pictureRoute
+            // MainPanel
             // 
-            pictureRoute.Location = new Point(0, 0);
-            pictureRoute.Name = "pictureRoute";
-            pictureRoute.Size = new Size(202, 355);
-            pictureRoute.TabIndex = 0;
-            pictureRoute.TabStop = false;
-            // 
-            // NameLabel
-            // 
-            NameLabel.AutoSize = true;
-            NameLabel.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            NameLabel.Location = new Point(208, 9);
-            NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(133, 31);
-            NameLabel.TabIndex = 1;
-            NameLabel.Text = "Название";
-            // 
-            // richTextBoxRoute
-            // 
-            richTextBoxRoute.BackColor = Color.White;
-            richTextBoxRoute.Location = new Point(208, 43);
-            richTextBoxRoute.Name = "richTextBoxRoute";
-            richTextBoxRoute.ReadOnly = true;
-            richTextBoxRoute.Size = new Size(420, 312);
-            richTextBoxRoute.TabIndex = 2;
-            richTextBoxRoute.Text = "";
-            // 
-            // ВetailsButton
-            // 
-            ВetailsButton.BackColor = Color.Cyan;
-            ВetailsButton.FlatAppearance.BorderSize = 0;
-            ВetailsButton.FlatStyle = FlatStyle.Flat;
-            ВetailsButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            ВetailsButton.Location = new Point(362, 364);
-            ВetailsButton.Name = "ВetailsButton";
-            ВetailsButton.Size = new Size(150, 30);
-            ВetailsButton.TabIndex = 3;
-            ВetailsButton.Text = "Узнать подробнее";
-            ВetailsButton.UseVisualStyleBackColor = false;
-            ВetailsButton.Click += ВetailsButton_Click;
-            // 
-            // NextButton
-            // 
-            NextButton.BackColor = Color.Cyan;
-            NextButton.FlatAppearance.BorderSize = 0;
-            NextButton.FlatStyle = FlatStyle.Flat;
-            NextButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            NextButton.Location = new Point(518, 364);
-            NextButton.Name = "NextButton";
-            NextButton.Size = new Size(110, 30);
-            NextButton.TabIndex = 4;
-            NextButton.Text = "Следующее";
-            NextButton.UseVisualStyleBackColor = false;
-            NextButton.Click += NextButton_Click;
-            // 
-            // likeButton
-            // 
-            likeButton.BackColor = Color.Cyan;
-            likeButton.FlatAppearance.BorderSize = 0;
-            likeButton.FlatStyle = FlatStyle.Flat;
-            likeButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            likeButton.Location = new Point(256, 364);
-            likeButton.Name = "likeButton";
-            likeButton.Size = new Size(100, 30);
-            likeButton.TabIndex = 5;
-            likeButton.Text = "Оценить";
-            likeButton.UseVisualStyleBackColor = false;
-            likeButton.Click += likeButton_Click;
+            MainPanel.Controls.Add(BackButton);
+            MainPanel.Controls.Add(likeButton);
+            MainPanel.Controls.Add(NextButton);
+            MainPanel.Controls.Add(ВetailsButton);
+            MainPanel.Controls.Add(richTextBoxRoute);
+            MainPanel.Controls.Add(NameLabel);
+            MainPanel.Controls.Add(pictureRoute);
+            MainPanel.Dock = DockStyle.Fill;
+            MainPanel.Location = new Point(0, 0);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new Size(900, 528);
+            MainPanel.TabIndex = 0;
             // 
             // BackButton
             // 
+            BackButton.Anchor = AnchorStyles.None;
             BackButton.BackColor = Color.Cyan;
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(160, 364);
+            BackButton.Location = new Point(361, 487);
+            BackButton.Margin = new Padding(3, 4, 3, 4);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(90, 30);
-            BackButton.TabIndex = 6;
+            BackButton.Size = new Size(103, 40);
+            BackButton.TabIndex = 13;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
-            BackButton.Click += BackButton_Click;
+            // 
+            // likeButton
+            // 
+            likeButton.Anchor = AnchorStyles.None;
+            likeButton.BackColor = Color.Cyan;
+            likeButton.FlatAppearance.BorderSize = 0;
+            likeButton.FlatStyle = FlatStyle.Flat;
+            likeButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            likeButton.Location = new Point(471, 487);
+            likeButton.Margin = new Padding(3, 4, 3, 4);
+            likeButton.Name = "likeButton";
+            likeButton.Size = new Size(114, 40);
+            likeButton.TabIndex = 12;
+            likeButton.Text = "Оценить";
+            likeButton.UseVisualStyleBackColor = false;
+            // 
+            // NextButton
+            // 
+            NextButton.Anchor = AnchorStyles.None;
+            NextButton.BackColor = Color.Cyan;
+            NextButton.FlatAppearance.BorderSize = 0;
+            NextButton.FlatStyle = FlatStyle.Flat;
+            NextButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            NextButton.Location = new Point(770, 487);
+            NextButton.Margin = new Padding(3, 4, 3, 4);
+            NextButton.Name = "NextButton";
+            NextButton.Size = new Size(126, 40);
+            NextButton.TabIndex = 11;
+            NextButton.Text = "Следующее";
+            NextButton.UseVisualStyleBackColor = false;
+            // 
+            // ВetailsButton
+            // 
+            ВetailsButton.Anchor = AnchorStyles.None;
+            ВetailsButton.BackColor = Color.Cyan;
+            ВetailsButton.FlatAppearance.BorderSize = 0;
+            ВetailsButton.FlatStyle = FlatStyle.Flat;
+            ВetailsButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            ВetailsButton.Location = new Point(592, 487);
+            ВetailsButton.Margin = new Padding(3, 4, 3, 4);
+            ВetailsButton.Name = "ВetailsButton";
+            ВetailsButton.Size = new Size(171, 40);
+            ВetailsButton.TabIndex = 10;
+            ВetailsButton.Text = "Узнать подробнее";
+            ВetailsButton.UseVisualStyleBackColor = false;
+            // 
+            // richTextBoxRoute
+            // 
+            richTextBoxRoute.Anchor = AnchorStyles.None;
+            richTextBoxRoute.BackColor = Color.White;
+            richTextBoxRoute.Location = new Point(413, 64);
+            richTextBoxRoute.Margin = new Padding(3, 4, 3, 4);
+            richTextBoxRoute.Name = "richTextBoxRoute";
+            richTextBoxRoute.ReadOnly = true;
+            richTextBoxRoute.Size = new Size(479, 415);
+            richTextBoxRoute.TabIndex = 9;
+            richTextBoxRoute.Text = "";
+            // 
+            // NameLabel
+            // 
+            NameLabel.Anchor = AnchorStyles.None;
+            NameLabel.AutoSize = true;
+            NameLabel.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            NameLabel.Location = new Point(413, 11);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(164, 38);
+            NameLabel.TabIndex = 8;
+            NameLabel.Text = "Название";
+            // 
+            // pictureRoute
+            // 
+            pictureRoute.Anchor = AnchorStyles.None;
+            pictureRoute.Location = new Point(4, 2);
+            pictureRoute.Margin = new Padding(3, 4, 3, 4);
+            pictureRoute.Name = "pictureRoute";
+            pictureRoute.Size = new Size(322, 473);
+            pictureRoute.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureRoute.TabIndex = 7;
+            pictureRoute.TabStop = false;
             // 
             // RecommenForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(629, 402);
-            Controls.Add(BackButton);
-            Controls.Add(likeButton);
-            Controls.Add(NextButton);
-            Controls.Add(ВetailsButton);
-            Controls.Add(richTextBoxRoute);
-            Controls.Add(NameLabel);
-            Controls.Add(pictureRoute);
+            ClientSize = new Size(900, 528);
+            Controls.Add(MainPanel);
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(480, 380);
             Name = "RecommenForm";
             Text = "RecommenForm";
             Load += RecommenForm_Load;
+            Resize += RecommenForm_Resize;
+            MainPanel.ResumeLayout(false);
+            MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureRoute).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureRoute;
-        private Label NameLabel;
-        private RichTextBox richTextBoxRoute;
-        private Button ВetailsButton;
-        private Button NextButton;
-        private Button likeButton;
+        private Panel MainPanel;
         private Button BackButton;
+        private Button likeButton;
+        private Button NextButton;
+        private Button ВetailsButton;
+        private RichTextBox richTextBoxRoute;
+        private Label NameLabel;
+        private PictureBox pictureRoute;
     }
 }
