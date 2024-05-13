@@ -78,7 +78,7 @@
             MainPanel.Dock = DockStyle.Fill;
             MainPanel.Location = new Point(0, 96);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(900, 432);
+            MainPanel.Size = new Size(900, 457);
             MainPanel.TabIndex = 86;
             // 
             // BackButton
@@ -88,7 +88,7 @@
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(392, 378);
+            BackButton.Location = new Point(392, 390);
             BackButton.Margin = new Padding(3, 4, 3, 4);
             BackButton.Name = "BackButton";
             BackButton.Size = new Size(138, 39);
@@ -103,7 +103,7 @@
             RegistrButton.FlatAppearance.BorderSize = 0;
             RegistrButton.FlatStyle = FlatStyle.Flat;
             RegistrButton.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            RegistrButton.Location = new Point(310, 310);
+            RegistrButton.Location = new Point(310, 322);
             RegistrButton.Margin = new Padding(3, 4, 3, 4);
             RegistrButton.Name = "RegistrButton";
             RegistrButton.Size = new Size(313, 60);
@@ -117,7 +117,7 @@
             MailLabel.AutoSize = true;
             MailLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
             MailLabel.ImeMode = ImeMode.NoControl;
-            MailLabel.Location = new Point(481, 216);
+            MailLabel.Location = new Point(481, 228);
             MailLabel.Name = "MailLabel";
             MailLabel.Size = new Size(99, 35);
             MailLabel.TabIndex = 97;
@@ -128,7 +128,7 @@
             MailField.Anchor = AnchorStyles.None;
             MailField.Font = new Font("Times New Roman", 15.75F);
             MailField.ForeColor = Color.Gray;
-            MailField.Location = new Point(481, 255);
+            MailField.Location = new Point(481, 267);
             MailField.Margin = new Padding(3, 4, 3, 4);
             MailField.Name = "MailField";
             MailField.Size = new Size(372, 38);
@@ -140,7 +140,7 @@
             SurnameField.Anchor = AnchorStyles.None;
             SurnameField.Font = new Font("Times New Roman", 15.75F);
             SurnameField.ForeColor = Color.Gray;
-            SurnameField.Location = new Point(481, 156);
+            SurnameField.Location = new Point(481, 168);
             SurnameField.Margin = new Padding(3, 4, 3, 4);
             SurnameField.Name = "SurnameField";
             SurnameField.Size = new Size(372, 38);
@@ -152,7 +152,7 @@
             NameField.Anchor = AnchorStyles.None;
             NameField.Font = new Font("Times New Roman", 15.75F);
             NameField.ForeColor = Color.Gray;
-            NameField.Location = new Point(481, 55);
+            NameField.Location = new Point(481, 67);
             NameField.Margin = new Padding(3, 4, 3, 4);
             NameField.Name = "NameField";
             NameField.Size = new Size(372, 38);
@@ -165,7 +165,7 @@
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
             nameLabel.ImeMode = ImeMode.NoControl;
-            nameLabel.Location = new Point(481, 16);
+            nameLabel.Location = new Point(481, 28);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(74, 35);
             nameLabel.TabIndex = 93;
@@ -177,7 +177,7 @@
             surnameLabel.AutoSize = true;
             surnameLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
             surnameLabel.ImeMode = ImeMode.NoControl;
-            surnameLabel.Location = new Point(481, 118);
+            surnameLabel.Location = new Point(481, 130);
             surnameLabel.Name = "surnameLabel";
             surnameLabel.Size = new Size(142, 35);
             surnameLabel.TabIndex = 92;
@@ -189,7 +189,7 @@
             loginLabel.AutoSize = true;
             loginLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
             loginLabel.ImeMode = ImeMode.NoControl;
-            loginLabel.Location = new Point(47, 16);
+            loginLabel.Location = new Point(47, 28);
             loginLabel.Name = "loginLabel";
             loginLabel.Size = new Size(99, 35);
             loginLabel.TabIndex = 91;
@@ -200,7 +200,7 @@
             LoginField.Anchor = AnchorStyles.None;
             LoginField.Font = new Font("Times New Roman", 15.75F);
             LoginField.ForeColor = Color.Gray;
-            LoginField.Location = new Point(47, 55);
+            LoginField.Location = new Point(47, 67);
             LoginField.Margin = new Padding(3, 4, 3, 4);
             LoginField.Name = "LoginField";
             LoginField.Size = new Size(372, 38);
@@ -213,7 +213,7 @@
             passwordLabel2.AutoSize = true;
             passwordLabel2.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
             passwordLabel2.ImeMode = ImeMode.NoControl;
-            passwordLabel2.Location = new Point(47, 216);
+            passwordLabel2.Location = new Point(47, 228);
             passwordLabel2.Name = "passwordLabel2";
             passwordLabel2.Size = new Size(275, 35);
             passwordLabel2.TabIndex = 89;
@@ -224,7 +224,7 @@
             password2Field.Anchor = AnchorStyles.None;
             password2Field.Font = new Font("Times New Roman", 15.75F);
             password2Field.ForeColor = Color.Gray;
-            password2Field.Location = new Point(47, 255);
+            password2Field.Location = new Point(47, 267);
             password2Field.Margin = new Padding(3, 4, 3, 4);
             password2Field.Name = "password2Field";
             password2Field.Size = new Size(372, 38);
@@ -237,7 +237,7 @@
             passwordLabel.AutoSize = true;
             passwordLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
             passwordLabel.ImeMode = ImeMode.NoControl;
-            passwordLabel.Location = new Point(47, 118);
+            passwordLabel.Location = new Point(47, 130);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new Size(116, 35);
             passwordLabel.TabIndex = 87;
@@ -248,7 +248,7 @@
             passwordField.Anchor = AnchorStyles.None;
             passwordField.Font = new Font("Times New Roman", 15.75F);
             passwordField.ForeColor = Color.Gray;
-            passwordField.Location = new Point(47, 156);
+            passwordField.Location = new Point(47, 168);
             passwordField.Margin = new Padding(3, 4, 3, 4);
             passwordField.Name = "passwordField";
             passwordField.Size = new Size(372, 38);
@@ -260,10 +260,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(900, 528);
+            ClientSize = new Size(900, 553);
             Controls.Add(MainPanel);
             Controls.Add(EntryLabel);
             Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(400, 550);
             Name = "RegistrForm";
             Text = "RegistrForm";
             Load += RegistrForm_Load;

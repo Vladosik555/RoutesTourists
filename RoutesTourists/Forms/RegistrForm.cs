@@ -228,10 +228,30 @@ namespace RoutesTourists
             LoginField.Width = (int)(MainPanel.Width * 0.4);
             passwordLabel.Top = (int)((MainPanel.Height + 103) * 0.07) + loginLabel.Height + LoginField.Height + 30;
             passwordLabel.Left = (int)(MainPanel.Width * 0.06);
-            passwordField.Top = (int)((MainPanel.Height + 103) * 0.07) + loginLabel.Height + LoginField.Height + passwordLabel.Height + 30;
+            passwordField.Top = (int)((MainPanel.Height + 103) * 0.07) + loginLabel.Height + LoginField.Height + passwordLabel.Height + 31;
             passwordField.Left = (int)(MainPanel.Width * 0.06);
             passwordField.Width = (int)(MainPanel.Width * 0.4);
-            //не успел остальное
+            passwordLabel2.Top = (int)((MainPanel.Height + 103) * 0.07) + loginLabel.Height + LoginField.Height + passwordLabel.Height + passwordField.Height + 55;
+            passwordLabel2.Left = (int)(MainPanel.Width * 0.06);
+            password2Field.Top = (int)((MainPanel.Height + 103) * 0.07) + loginLabel.Height + LoginField.Height + passwordLabel.Height + passwordLabel2.Height + 95;
+            password2Field.Left = (int)(MainPanel.Width * 0.06);
+            password2Field.Width = (int)(MainPanel.Width * 0.4);
+
+            nameLabel.Top = (int)((MainPanel.Height + 103) * 0.07);
+            nameLabel.Left = (int)(MainPanel.Width * 0.535);
+            NameField.Top = (int)((MainPanel.Height + 103) * 0.07) + nameLabel.Height + 3;
+            NameField.Left = (int)(MainPanel.Width * 0.535);
+            NameField.Width = (int)(MainPanel.Width * 0.4);
+            surnameLabel.Top = (int)((MainPanel.Height + 103) * 0.07) + nameLabel.Height + NameField.Height + 30;
+            surnameLabel.Left = (int)(MainPanel.Width * 0.535);
+            SurnameField.Top = (int)((MainPanel.Height + 103) * 0.07) + nameLabel.Height + NameField.Height + surnameLabel.Height + 31;
+            SurnameField.Left = (int)(MainPanel.Width * 0.535);
+            SurnameField.Width = (int)(MainPanel.Width * 0.4);
+            MailLabel.Top = (int)((MainPanel.Height + 103) * 0.07) + nameLabel.Height + NameField.Height + surnameLabel.Height + SurnameField.Height + 55;
+            MailLabel.Left = (int)(MainPanel.Width * 0.535);
+            MailField.Top = (int)((MainPanel.Height + 103) * 0.07) + nameLabel.Height + NameField.Height + surnameLabel.Height + MailLabel.Height + 95;
+            MailField.Left = (int)(MainPanel.Width * 0.535);
+            MailField.Width = (int)(MainPanel.Width * 0.4);
 
 
             RegistrButton.Width = (int)((MainPanel.Width - 20) * 0.39);
