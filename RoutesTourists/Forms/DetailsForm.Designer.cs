@@ -170,7 +170,7 @@
             deleteButton.FlatAppearance.BorderSize = 0;
             deleteButton.FlatStyle = FlatStyle.Flat;
             deleteButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            deleteButton.Location = new Point(406, 375);
+            deleteButton.Location = new Point(423, 375);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(100, 30);
             deleteButton.TabIndex = 12;
