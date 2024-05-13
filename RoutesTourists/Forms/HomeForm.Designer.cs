@@ -122,6 +122,7 @@
             CharacteristicsButton.TabIndex = 52;
             CharacteristicsButton.Text = "Характеристики";
             CharacteristicsButton.UseVisualStyleBackColor = false;
+            CharacteristicsButton.Click += CharacteristicsButton_Click;
             // 
             // FavoritesButton
             // 
@@ -136,6 +137,7 @@
             FavoritesButton.TabIndex = 51;
             FavoritesButton.Text = "Избранное";
             FavoritesButton.UseVisualStyleBackColor = false;
+            FavoritesButton.Click += FavoritesButton_Click;
             // 
             // RecommenButton
             // 
@@ -150,6 +152,7 @@
             RecommenButton.TabIndex = 50;
             RecommenButton.Text = "Рекомендации";
             RecommenButton.UseVisualStyleBackColor = false;
+            RecommenButton.Click += RecommenButton_Click;
             // 
             // label2
             // 

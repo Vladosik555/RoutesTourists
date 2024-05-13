@@ -95,6 +95,7 @@
             BackButton.TabIndex = 99;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
+            BackButton.Click += BackButton_Click;
             // 
             // RegistrButton
             // 
@@ -110,6 +111,7 @@
             RegistrButton.TabIndex = 98;
             RegistrButton.Text = "Зарегистрироваться";
             RegistrButton.UseVisualStyleBackColor = false;
+            RegistrButton.Click += RegistrButton_Click;
             // 
             // MailLabel
             // 
