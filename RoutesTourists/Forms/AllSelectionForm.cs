@@ -26,6 +26,7 @@ namespace RoutesTourists.Forms
                 AllSelectionTable.DataSource = Tables.GetCharacteristicsTable(selectionRoutes);
                 CurrentRoutes.currentRoutes = selectionRoutes;
                 //скуф
+                //d
             }
         }
 
