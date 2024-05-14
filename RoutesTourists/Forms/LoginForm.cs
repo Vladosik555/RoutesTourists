@@ -110,16 +110,21 @@ namespace RoutesTourists
             passwordField.Top = (int)((MainPanel.Height + 103) * 0.07) + loginLabel.Height + loginField.Height + passwordLabel.Height + 45;
             passwordField.Left = (int)(MainPanel.Width * 0.3);
             passwordField.Width = (int)(MainPanel.Width * 0.4);
-
+            showCheckBox.Top = (int)((MainPanel.Height + 103) * 0.07) + loginLabel.Height + loginField.Height + passwordLabel.Height + passwordField.Height  + 45;
+            showCheckBox.Left = (int)(MainPanel.Width * 0.3);
 
             LoginButton.Width = (int)((MainPanel.Width - 20) * 0.39);
             LoginButton.Height = (int)((MainPanel.Height + 103) * 0.115);
-            LoginButton.Top = (int)((MainPanel.Height + 103) * 0.4) + loginField.Height + passwordField.Height - 10;
+            LoginButton.Top = (int)((MainPanel.Height + 103) * 0.4) + loginField.Height + passwordField.Height - 7;
             LoginButton.Left = (int)(MainPanel.Width * 0.3);
             BackButton.Width = (int)((MainPanel.Width - 20) * 0.3);
             BackButton.Height = (int)((MainPanel.Height + 103) * 0.075);
-            BackButton.Top = (int)((MainPanel.Height + 103) * 0.4) + LoginButton.Height + loginField.Height + passwordField.Height + 5;
+            BackButton.Top = (int)((MainPanel.Height + 103) * 0.4) + LoginButton.Height + loginField.Height + passwordField.Height - 2;
             BackButton.Left = (int)(MainPanel.Width * 0.35);
+            LoginViaVKButton.Width = (int)((MainPanel.Width - 20) * 0.3);
+            LoginViaVKButton.Height = (int)((MainPanel.Height + 103) * 0.075);
+            LoginViaVKButton.Top = (int)((MainPanel.Height + 103) * 0.4) + LoginButton.Height + loginField.Height + passwordField.Height + BackButton.Height + 3;
+            LoginViaVKButton.Left = (int)(MainPanel.Width * 0.35);
 
 
         }

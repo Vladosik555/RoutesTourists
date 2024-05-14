@@ -266,7 +266,7 @@
             Controls.Add(MainPanel);
             Controls.Add(EntryLabel);
             Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(400, 550);
+            MinimumSize = new Size(400, 560);
             Name = "RegistrForm";
             Text = "RegistrForm";
             Load += RegistrForm_Load;

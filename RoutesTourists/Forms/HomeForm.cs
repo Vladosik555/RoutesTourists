@@ -77,6 +77,40 @@ namespace RoutesTourists
             ExitAccountButton.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + FavoritesButton.Height + CharacteristicsButton.Height + SelectionsButton.Height + MySelectedButton.Height + 145;
             ExitAccountButton.Left = (int)(MainPanel.Width * 0.015);
 
+            LoginLabel.Top = (int)((MainPanel.Height + 103) * 0.06);
+            LoginLabel.Left = (int)(MainPanel.Width * 0.33);
+            ChangeButton.Width = (int)((MainPanel.Width - 20) * 0.17);
+            ChangeButton.Height = (int)((MainPanel.Height + 103) * 0.05);
+            ChangeButton.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + FavoritesButton.Height + CharacteristicsButton.Height + 93;
+            ChangeButton.Left = (int)(MainPanel.Width * 0.33);
+            EditButton.Width = (int)((MainPanel.Width - 20) * 0.27);
+            EditButton.Height = (int)((MainPanel.Height + 103) * 0.08);
+            EditButton.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + FavoritesButton.Height + CharacteristicsButton.Height + SelectionsButton.Height + MySelectedButton.Height + 145;
+            EditButton.Left = (int)(MainPanel.Width * 0.7);
+            pictureProfile.Width = (int)((MainPanel.Width - 20) * 0.15);
+            pictureProfile.Height = (int)((MainPanel.Height + 103) * 0.15);
+            pictureProfile.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + 27;
+            pictureProfile.Left = (int)(MainPanel.Width * 0.33);
+            NameLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + 27;
+            NameLabel.Left = (int)(MainPanel.Width * 0.6) + 10;
+            NameField.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + 27;
+            NameField.Left = (int)(MainPanel.Width * 0.65) + 50;
+            NameField.Width = (int)((MainPanel.Width - 20) * 0.27);
+            SurnameLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + 85;
+            SurnameLabel.Left = (int)(MainPanel.Width * 0.6) - 30;
+            SurnameField.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + 85;
+            SurnameField.Left = (int)(MainPanel.Width * 0.65) + 50;
+            SurnameField.Width = (int)((MainPanel.Width - 20) * 0.27);
+            NumberLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + 150;
+            NumberLabel.Left = (int)(MainPanel.Width * 0.6) - 25;
+            NumberField.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + 150;
+            NumberField.Left = (int)(MainPanel.Width * 0.65) + 50;
+            NumberField.Width = (int)((MainPanel.Width - 20) * 0.27);
+            MailLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + 220;
+            MailLabel.Left = (int)(MainPanel.Width * 0.6) - 10;
+            MailField.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + 220;
+            MailField.Left = (int)(MainPanel.Width * 0.65) + 50;
+            MailField.Width = (int)((MainPanel.Width - 20) * 0.27);
         }
 
         private void HomeForm_Load(object sender, EventArgs e)

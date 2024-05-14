@@ -256,11 +256,11 @@ namespace RoutesTourists
 
             RegistrButton.Width = (int)((MainPanel.Width - 20) * 0.39);
             RegistrButton.Height = (int)((MainPanel.Height + 103) * 0.115);
-            RegistrButton.Top = (int)((MainPanel.Height + 103) * 0.6);
+            RegistrButton.Top = (int)((MainPanel.Height + 103) * 0.6) + 10;
             RegistrButton.Left = (int)(MainPanel.Width * 0.3);
             BackButton.Width = (int)((MainPanel.Width - 20) * 0.3);
             BackButton.Height = (int)((MainPanel.Height + 103) * 0.075);
-            BackButton.Top = (int)((MainPanel.Height + 103) * 0.6) + RegistrButton.Height + 8;
+            BackButton.Top = (int)((MainPanel.Height + 103) * 0.6) + RegistrButton.Height + 15;
             BackButton.Left = (int)(MainPanel.Width * 0.35);
         }
     }
