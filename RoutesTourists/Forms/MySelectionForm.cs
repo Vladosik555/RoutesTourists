@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -82,6 +84,25 @@ namespace RoutesTourists.Forms
             this.Hide();
             SelectionForm selectionForm = new SelectionForm();
             selectionForm.ShowDialog();
+        }
+
+        private void SendByMailButton_Click(object sender, EventArgs e)
+        {
+            MailAddress from = new MailAddress("papa_papa20@list.ru", "RoutesTourists");
+            MailAddress to = new MailAddress("sholokhov.04@list.ru");
+
+            MailMessage message = new MailMessage(from, to);
+            message.Subject = "Крутое место";
+            message.Body = "Москва";
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.mail.ru";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential(from.Address, "qx9ZZ6t7cnZQpiGSsNQX");
+            smtp.Send(message);
         }
     }
 }
