@@ -81,7 +81,7 @@ namespace RoutesTourists.Forms
                 {
                     currUser.AnotherRoutes += "," + currRoure.Id.ToString();
                 }
-                currRoure.Likes++;
+                currRoure.Likes += 1;
                 context.SaveChanges();
                 MessageBox.Show("Данный маршрут был добавлен в избранное");
             }
@@ -119,7 +119,7 @@ namespace RoutesTourists.Forms
         private void BackButton_Click(object sender, EventArgs e)
         {
             CurrentRoutes.currentRoutes = null;
-            this.Close();
+            this.Hide();
             HomeForm homeForm = new HomeForm();
             homeForm.ShowDialog();
         }

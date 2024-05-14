@@ -87,7 +87,7 @@ namespace RoutesTourists.Forms
                         return;
                     }
                 }
-                if (currRoure.Likes == null)
+                if (currRoure.Likes == null || currRoure.Likes == 0)
                 {
                     currRoure.Likes = 0;
                 }
@@ -99,7 +99,7 @@ namespace RoutesTourists.Forms
                 {
                     currUser.AnotherRoutes += "," + currRoure.Id.ToString();
                 }
-                currRoure.Likes++;
+                currRoure.Likes += 1;
                 context.SaveChanges();
                 MessageBox.Show("Даннай маршрут был добавлен в избранное");
             }
@@ -132,6 +132,7 @@ namespace RoutesTourists.Forms
                         currUser.AnotherRoutes = currUser.AnotherRoutes.Replace($"{currRoure.Id}" + ",", "").Replace("," + $"{currRoure.Id}", "").Replace($"{currRoure.Id}", "");
                     }
                 }
+                currRoure.Likes -= 1;
                 CurrentUser.currentUser = currUser;
                 context.SaveChanges();
                 MessageBox.Show("Даннай маршрут был удалён");

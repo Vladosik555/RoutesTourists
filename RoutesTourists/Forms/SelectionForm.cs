@@ -49,6 +49,11 @@ namespace RoutesTourists.Forms
             {
                 DataGridViewRow selectedRow = SelectionTable.Rows[e.RowIndex];
                 int position = (int)selectedRow.Cells["Позиция"].Value;
+                if(CurrentSelections.currentSelections[position - 1] == null)
+                {
+                    MessageBox.Show("Данный маршрут не был найден");
+                    return;
+                }
                 var selection = CurrentSelections.currentSelections[position - 1];
                 CurrentSelection.currentSelection = selection;
                 MySelectionForm mySelectionForm = new MySelectionForm();

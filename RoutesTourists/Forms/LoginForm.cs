@@ -1,4 +1,5 @@
 ﻿using RoutesTourists.Classes;
+using RoutesTourists.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace RoutesTourists
 {
@@ -83,7 +85,7 @@ namespace RoutesTourists
                     return;
                 }
                 CurrentUser.currentUser = user;
-                this.Close();
+                this.Hide();
                 HomeForm homeForm = new HomeForm();
                 homeForm.Show();
             }
@@ -91,7 +93,7 @@ namespace RoutesTourists
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             InitialForm initialForm = new InitialForm();
             initialForm.Show();
         }
@@ -125,6 +127,25 @@ namespace RoutesTourists
         private void LoginForm_Load(object sender, EventArgs e)
         {
             ClientSize = new Size(918, 575);
+        }
+
+        private void showCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (showCheckBox.Checked)
+            {
+                passwordField.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                passwordField.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void LoginViaVKButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginVKForm loginVKForm = new LoginVKForm();
+            loginVKForm.Show();
         }
     }
 }

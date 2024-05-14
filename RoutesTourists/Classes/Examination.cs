@@ -59,5 +59,28 @@ namespace RoutesTourists.Classes
             }
             return null;
         }
+
+        public static bool CheckPhoneNumber(string numbers)
+        {
+            if (!numbers.StartsWith("+7") && !numbers.StartsWith("8"))
+            {
+                return false;
+            }
+            if ((numbers.StartsWith("+7") && numbers.Length == 12) || (numbers.StartsWith("8") && numbers.Length == 11))
+            {
+                if (Char.IsNumber(numbers[0]) || numbers[0] == '+')
+                {
+                    for (int i = 1; i < numbers.Length; i++)
+                    {
+                        if (!Char.IsNumber(numbers[i]))
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

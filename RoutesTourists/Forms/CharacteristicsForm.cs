@@ -47,6 +47,11 @@ namespace RoutesTourists.Forms
             {
                 DataGridViewRow selectedRow = FilteredTable.Rows[e.RowIndex];
                 int position = (int)selectedRow.Cells["Позиция"].Value;
+                if(CurrentRoutes.currentRoutes[position - 1] == null)
+                {
+                    MessageBox.Show("Данный маршрут не был найден");
+                    return;
+                }
                 var route = CurrentRoutes.currentRoutes[position - 1];
                 CurrentRoute.currentRoute = route;
                 DetailsForm detailsForm = new DetailsForm();
@@ -56,7 +61,7 @@ namespace RoutesTourists.Forms
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             HomeForm homeForm = new HomeForm();
             homeForm.ShowDialog();
         }
@@ -65,20 +70,28 @@ namespace RoutesTourists.Forms
         {
             if(startDuration.Text != string.Empty)
             {
-                if (Examination.CheckNumber(startDuration.Text))
+                if(!(startDuration.Text.Length >= 9))
                 {
-                    if (Convert.ToInt32(startDuration.Text) <= Int32.MaxValue)
+                    if (Examination.CheckNumber(startDuration.Text))
                     {
-                        start_duration = Convert.ToInt32(startDuration.Text);
+                        if (Convert.ToInt32(startDuration.Text) <= Int32.MaxValue)
+                        {
+                            start_duration = Convert.ToInt32(startDuration.Text);
+                        }
+                        else if (Convert.ToInt32(startDuration.Text) < 0)
+                        {
+                            start_duration = 0;
+                        }
                     }
-                    else if (Convert.ToInt32(startDuration.Text) < 0)
+                    else
                     {
                         start_duration = 0;
                     }
                 }
                 else
                 {
-                    start_duration = 0;
+                    MessageBox.Show("Нельзя вводить текст, который большей 8 символов");
+                    return;
                 }
             }
             GetRoutes(start_duration, end_duration, start_budget, end_budget, seasonality);
@@ -88,20 +101,28 @@ namespace RoutesTourists.Forms
         {
             if(endDuration.Text != string.Empty)
             {
-                if (Examination.CheckNumber(endDuration.Text))
+                if(!(endDuration.Text.Length >= 9))
                 {
-                    if (Convert.ToInt32(endDuration.Text) <= Int32.MaxValue)
+                    if (Examination.CheckNumber(endDuration.Text))
                     {
-                        end_duration = Convert.ToInt32(endDuration.Text);
+                        if (Convert.ToInt32(endDuration.Text) <= Int32.MaxValue)
+                        {
+                            end_duration = Convert.ToInt32(endDuration.Text);
+                        }
+                        else if (Convert.ToInt32(endDuration.Text) < 0)
+                        {
+                            end_duration = 0;
+                        }
                     }
-                    else if (Convert.ToInt32(endDuration.Text) < 0)
+                    else
                     {
                         end_duration = 0;
                     }
                 }
                 else
                 {
-                    end_duration = 0;
+                    MessageBox.Show("Нельзя вводить текст, который большей 8 символов");
+                    return;
                 }
             }
             GetRoutes(start_duration, end_duration, start_budget, end_budget, seasonality);
@@ -111,20 +132,28 @@ namespace RoutesTourists.Forms
         {
             if(startBudget.Text != string.Empty)
             {
-                if (Examination.CheckNumber(startBudget.Text))
+                if(!(startBudget.Text.Length >= 9))
                 {
-                    if (Convert.ToInt32(startBudget.Text) <= Int32.MaxValue)
+                    if (Examination.CheckNumber(startBudget.Text))
                     {
-                        start_budget = Convert.ToInt32(startBudget.Text);
+                        if (Convert.ToInt32(startBudget.Text) <= Int32.MaxValue)
+                        {
+                            start_budget = Convert.ToInt32(startBudget.Text);
+                        }
+                        else if (Convert.ToInt32(startBudget.Text) < 0)
+                        {
+                            start_budget = 0;
+                        }
                     }
-                    else if (Convert.ToInt32(startBudget.Text) < 0)
+                    else
                     {
                         start_budget = 0;
                     }
                 }
                 else
                 {
-                    start_budget = 0;
+                    MessageBox.Show("Нельзя вводить текст, который большей 8 символов");
+                    return;
                 }
             }
             GetRoutes(start_duration, end_duration, start_budget, end_budget, seasonality);
@@ -134,20 +163,28 @@ namespace RoutesTourists.Forms
         {
             if(endBudget.Text != string.Empty)
             {
-                if (Examination.CheckNumber(endBudget.Text))
+                if(!(endBudget.Text.Length >= 9))
                 {
-                    if (Convert.ToInt32(endBudget.Text) <= Int32.MaxValue)
+                    if (Examination.CheckNumber(endBudget.Text))
                     {
-                        end_budget = Convert.ToInt32(endBudget.Text);
+                        if (Convert.ToInt32(endBudget.Text) <= Int32.MaxValue)
+                        {
+                            end_budget = Convert.ToInt32(endBudget.Text);
+                        }
+                        else if (Convert.ToInt32(endBudget.Text) < 0)
+                        {
+                            end_budget = 0;
+                        }
                     }
-                    else if (Convert.ToInt32(endBudget.Text) < 0)
+                    else
                     {
                         end_budget = 0;
                     }
                 }
                 else
                 {
-                    end_budget = 0;
+                    MessageBox.Show("Нельзя вводить текст, который большей 8 символов");
+                    return;
                 }
             }
             GetRoutes(start_duration, end_duration, start_budget, end_budget, seasonality);

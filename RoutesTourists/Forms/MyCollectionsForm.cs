@@ -78,14 +78,25 @@ namespace RoutesTourists.Forms
                     MessageBox.Show("Ошибка в подключении базы данных");
                     return;
                 }
-                route.LikesSelection++;
+                route.LikesSelection += 1;
                 var user = context.Users.FirstOrDefault(r => r.IdUser.Equals(CurrentUser.currentUser.IdUser));
                 if (user == null)
                 {
                     MessageBox.Show("Ошибка в подключении базы данных");
                     return;
                 }
-                // добавить проверку на существующий маршрут
+                var selections = context.Selections.Where(r => r.IdRoutes.Equals(route.Id));
+                if (selections != null)
+                {
+                    foreach (var currSelection in selections)
+                    {
+                        if (user.IdSelection.Split(",").Contains(currSelection.Id))
+                        {
+                            MessageBox.Show("Данный маршрут был добавлен ранее в подборки");
+                            return;
+                        }
+                    }
+                }
                 if (user.IdSelection == null)
                 {
                     user.IdSelection = selection.Id;
@@ -96,20 +107,21 @@ namespace RoutesTourists.Forms
                 }
                 context.Selections.Add(selection);
                 context.SaveChanges();
+                MessageBox.Show("Данная маршрут был добавлен в подборки");
             }
         }
 
 
         private void ViewCollectionsButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             SelectionForm selectionForm = new SelectionForm();  
             selectionForm.ShowDialog();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             HomeForm homeForm = new HomeForm();
             homeForm.ShowDialog();
         }

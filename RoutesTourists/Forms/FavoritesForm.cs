@@ -51,7 +51,7 @@ namespace RoutesTourists.Forms
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             HomeForm homeForm = new HomeForm();
             homeForm.Show();
         }
@@ -62,6 +62,11 @@ namespace RoutesTourists.Forms
             {
                 DataGridViewRow selectedRow = FavoriteTable.Rows[e.RowIndex];
                 int position = (int)selectedRow.Cells["Позиция"].Value;
+                if(CurrentRoutes.currentRoutes[position - 1] == null)
+                {
+                    MessageBox.Show("Данный маршрут не был найден");
+                    return;
+                }
                 var route = CurrentRoutes.currentRoutes[position - 1];
                 CurrentRoute.currentRoute = route;
                 DetailsForm detailsForm = new DetailsForm();

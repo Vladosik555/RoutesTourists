@@ -40,10 +40,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(261, 59);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(228, 44);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(371, 296);
+            pictureBox1.Size = new Size(325, 222);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -54,10 +53,9 @@
             LoginButton.FlatAppearance.BorderSize = 0;
             LoginButton.FlatStyle = FlatStyle.Flat;
             LoginButton.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            LoginButton.Location = new Point(372, 379);
-            LoginButton.Margin = new Padding(3, 4, 3, 4);
+            LoginButton.Location = new Point(326, 315);
             LoginButton.Name = "LoginButton";
-            LoginButton.Size = new Size(145, 48);
+            LoginButton.Size = new Size(127, 36);
             LoginButton.TabIndex = 1;
             LoginButton.Text = "Вход";
             LoginButton.UseVisualStyleBackColor = false;
@@ -69,10 +67,9 @@
             RegisterButton.FlatAppearance.BorderSize = 0;
             RegisterButton.FlatStyle = FlatStyle.Flat;
             RegisterButton.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            RegisterButton.Location = new Point(355, 435);
-            RegisterButton.Margin = new Padding(3, 4, 3, 4);
+            RegisterButton.Location = new Point(311, 357);
             RegisterButton.Name = "RegisterButton";
-            RegisterButton.Size = new Size(179, 48);
+            RegisterButton.Size = new Size(157, 36);
             RegisterButton.TabIndex = 2;
             RegisterButton.Text = "Регистрация";
             RegisterButton.UseVisualStyleBackColor = false;
@@ -85,20 +82,20 @@
             MainPanel.Controls.Add(LoginButton);
             MainPanel.Dock = DockStyle.Fill;
             MainPanel.Location = new Point(0, 0);
+            MainPanel.Margin = new Padding(3, 2, 3, 2);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(900, 528);
+            MainPanel.Size = new Size(788, 396);
             MainPanel.TabIndex = 3;
             MainPanel.Resize += MainPanel_Resize;
             // 
             // InitialForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(900, 528);
+            ClientSize = new Size(788, 396);
             Controls.Add(MainPanel);
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(400, 490);
+            MinimumSize = new Size(352, 377);
             Name = "InitialForm";
             Text = "InitialForm";
             Load += InitialForm_Load;

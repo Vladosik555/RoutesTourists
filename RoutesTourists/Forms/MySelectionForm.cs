@@ -70,7 +70,7 @@ namespace RoutesTourists.Forms
                         return;
                     }
                 }
-                route.LikesSelection--;
+                route.LikesSelection -= 1;
                 Selection selection = currSelection;
                 context.Selections.Remove(selection);
                 context.SaveChanges();
@@ -79,7 +79,7 @@ namespace RoutesTourists.Forms
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             SelectionForm selectionForm = new SelectionForm();
             selectionForm.ShowDialog();
         }

@@ -72,16 +72,30 @@ namespace RoutesTourists
             MySelectedButton.Height = (int)((MainPanel.Height + 103) * 0.08);
             MySelectedButton.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + FavoritesButton.Height + CharacteristicsButton.Height + SelectionsButton.Height + 115;
             MySelectedButton.Left = (int)(MainPanel.Width * 0.015);
-            EnterButton.Width = (int)((MainPanel.Width - 20) * 0.241);
-            EnterButton.Height = (int)((MainPanel.Height + 103) * 0.08);
-            EnterButton.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + FavoritesButton.Height + CharacteristicsButton.Height + SelectionsButton.Height + MySelectedButton.Height + 145;
-            EnterButton.Left = (int)(MainPanel.Width * 0.015);
+            ExitAccountButton.Width = (int)((MainPanel.Width - 20) * 0.241);
+            ExitAccountButton.Height = (int)((MainPanel.Height + 103) * 0.08);
+            ExitAccountButton.Top = (int)((MainPanel.Height + 103) * 0.05) + RecommenButton.Height + FavoritesButton.Height + CharacteristicsButton.Height + SelectionsButton.Height + MySelectedButton.Height + 145;
+            ExitAccountButton.Left = (int)(MainPanel.Width * 0.015);
 
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
             ClientSize = new Size(918, 661);
+        }
+
+        private void SelectionsButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AllSelectionForm allSelectionForm = new AllSelectionForm();
+            allSelectionForm.ShowDialog();
+        }
+
+        private void ExitAccountButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            InitialForm initialForm = new InitialForm();
+            initialForm.Show();
         }
     }
 }

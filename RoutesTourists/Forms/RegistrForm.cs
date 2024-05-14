@@ -200,7 +200,7 @@ namespace RoutesTourists
                 context.Users.Add(user);
                 context.SaveChanges();
                 MessageBox.Show("Регистрация прошла успешно");
-                this.Close();
+                this.Hide();
                 InitialForm initialForm = new InitialForm();
                 initialForm.Show();
             }
@@ -208,7 +208,7 @@ namespace RoutesTourists
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             InitialForm initialForm = new InitialForm();
             initialForm.Show();
         }

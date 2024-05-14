@@ -36,6 +36,8 @@
             LoginButton = new Button();
             BackButton = new Button();
             MainPanel = new Panel();
+            LoginViaVKButton = new Button();
+            showCheckBox = new CheckBox();
             MainPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,7 +48,7 @@
             EntryLabel.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             EntryLabel.Location = new Point(0, 0);
             EntryLabel.Name = "EntryLabel";
-            EntryLabel.Size = new Size(900, 103);
+            EntryLabel.Size = new Size(788, 77);
             EntryLabel.TabIndex = 0;
             EntryLabel.Text = "Вход";
             EntryLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -55,9 +57,9 @@
             // 
             passwordLabel.AutoSize = true;
             passwordLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            passwordLabel.Location = new Point(273, 137);
+            passwordLabel.Location = new Point(239, 103);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(116, 35);
+            passwordLabel.Size = new Size(93, 26);
             passwordLabel.TabIndex = 9;
             passwordLabel.Text = "Пароль";
             // 
@@ -65,10 +67,9 @@
             // 
             passwordField.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             passwordField.ForeColor = Color.Gray;
-            passwordField.Location = new Point(273, 176);
-            passwordField.Margin = new Padding(3, 4, 3, 4);
+            passwordField.Location = new Point(239, 132);
             passwordField.Name = "passwordField";
-            passwordField.Size = new Size(372, 38);
+            passwordField.Size = new Size(326, 32);
             passwordField.TabIndex = 8;
             passwordField.Text = "Введите пароль";
             passwordField.Enter += passwordField_Enter;
@@ -79,9 +80,9 @@
             loginLabel.AutoSize = true;
             loginLabel.BackColor = Color.Transparent;
             loginLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            loginLabel.Location = new Point(273, 33);
+            loginLabel.Location = new Point(239, 25);
             loginLabel.Name = "loginLabel";
-            loginLabel.Size = new Size(99, 35);
+            loginLabel.Size = new Size(80, 26);
             loginLabel.TabIndex = 7;
             loginLabel.Text = "Логин";
             // 
@@ -89,10 +90,9 @@
             // 
             loginField.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             loginField.ForeColor = Color.Gray;
-            loginField.Location = new Point(273, 72);
-            loginField.Margin = new Padding(3, 4, 3, 4);
+            loginField.Location = new Point(239, 54);
             loginField.Name = "loginField";
-            loginField.Size = new Size(372, 38);
+            loginField.Size = new Size(326, 32);
             loginField.TabIndex = 6;
             loginField.Text = "Введите логин";
             loginField.Enter += loginField_Enter;
@@ -104,10 +104,9 @@
             LoginButton.FlatAppearance.BorderSize = 0;
             LoginButton.FlatStyle = FlatStyle.Flat;
             LoginButton.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            LoginButton.Location = new Point(350, 279);
-            LoginButton.Margin = new Padding(3, 4, 3, 4);
+            LoginButton.Location = new Point(306, 209);
             LoginButton.Name = "LoginButton";
-            LoginButton.Size = new Size(178, 60);
+            LoginButton.Size = new Size(156, 45);
             LoginButton.TabIndex = 10;
             LoginButton.Text = "Войти";
             LoginButton.UseVisualStyleBackColor = false;
@@ -119,10 +118,9 @@
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(372, 347);
-            BackButton.Margin = new Padding(3, 4, 3, 4);
+            BackButton.Location = new Point(326, 260);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(138, 39);
+            BackButton.Size = new Size(121, 29);
             BackButton.TabIndex = 11;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
@@ -130,6 +128,8 @@
             // 
             // MainPanel
             // 
+            MainPanel.Controls.Add(LoginViaVKButton);
+            MainPanel.Controls.Add(showCheckBox);
             MainPanel.Controls.Add(passwordField);
             MainPanel.Controls.Add(BackButton);
             MainPanel.Controls.Add(loginField);
@@ -137,21 +137,47 @@
             MainPanel.Controls.Add(loginLabel);
             MainPanel.Controls.Add(passwordLabel);
             MainPanel.Dock = DockStyle.Fill;
-            MainPanel.Location = new Point(0, 103);
+            MainPanel.Location = new Point(0, 77);
+            MainPanel.Margin = new Padding(3, 2, 3, 2);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(900, 425);
+            MainPanel.Size = new Size(788, 400);
             MainPanel.TabIndex = 12;
+            // 
+            // LoginViaVKButton
+            // 
+            LoginViaVKButton.BackColor = Color.Cyan;
+            LoginViaVKButton.FlatAppearance.BorderSize = 0;
+            LoginViaVKButton.FlatStyle = FlatStyle.Flat;
+            LoginViaVKButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            LoginViaVKButton.Location = new Point(306, 292);
+            LoginViaVKButton.Name = "LoginViaVKButton";
+            LoginViaVKButton.Size = new Size(156, 24);
+            LoginViaVKButton.TabIndex = 13;
+            LoginViaVKButton.Text = "Вход через ВК";
+            LoginViaVKButton.UseVisualStyleBackColor = false;
+            LoginViaVKButton.Click += LoginViaVKButton_Click;
+            // 
+            // showCheckBox
+            // 
+            showCheckBox.AutoSize = true;
+            showCheckBox.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            showCheckBox.Location = new Point(239, 176);
+            showCheckBox.Name = "showCheckBox";
+            showCheckBox.Size = new Size(178, 26);
+            showCheckBox.TabIndex = 12;
+            showCheckBox.Text = "Показать пароль";
+            showCheckBox.UseVisualStyleBackColor = true;
+            showCheckBox.CheckedChanged += showCheckBox_CheckedChanged;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(900, 528);
+            ClientSize = new Size(788, 396);
             Controls.Add(MainPanel);
             Controls.Add(EntryLabel);
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(400, 490);
+            MinimumSize = new Size(352, 377);
             Name = "LoginForm";
             Text = "LoginForm";
             Load += LoginForm_Load;
@@ -171,5 +197,7 @@
         private Button LoginButton;
         private Button BackButton;
         private Panel MainPanel;
+        private CheckBox showCheckBox;
+        private Button LoginViaVKButton;
     }
 }
