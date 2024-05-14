@@ -132,6 +132,7 @@ namespace RoutesTourists
         private void LoginForm_Load(object sender, EventArgs e)
         {
             ClientSize = new Size(918, 575);
+            //f
         }
 
         private void showCheckBox_CheckedChanged(object sender, EventArgs e)
