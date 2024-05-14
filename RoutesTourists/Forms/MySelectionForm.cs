@@ -83,5 +83,10 @@ namespace RoutesTourists.Forms
             SelectionForm selectionForm = new SelectionForm();
             selectionForm.ShowDialog();
         }
+
+        private void SendByMailButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -348,11 +348,11 @@
         private Button RecommenButton;
         private Label label2;
         private Label LoginLabel;
-        private PictureBox pictureProfile;
-        private Label NameField;
-        private Label MailLabel;
-        private Label NumberLabel;
-        private Label SurnameLabel;
+        private PictureBox pictureBox1;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label1;
         private Label NameLabel;
         private Button ChangeButton;
         private Button EditButton;

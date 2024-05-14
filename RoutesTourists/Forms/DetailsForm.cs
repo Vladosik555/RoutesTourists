@@ -107,7 +107,6 @@ namespace RoutesTourists.Forms
                 MessageBox.Show("Даннай маршрут был добавлен в избранное");
             }
         }
-
         private void deleteButton_Click(object sender, EventArgs e)
         {
             using (var context = new RoutesForTouristsContext())

@@ -202,6 +202,7 @@
             SendByMailButton.TabIndex = 25;
             SendByMailButton.Text = "Отправить на почту";
             SendByMailButton.UseVisualStyleBackColor = false;
+            SendByMailButton.Click += SendByMailButton_Click;
             // 
             // MySelectionForm
             // 

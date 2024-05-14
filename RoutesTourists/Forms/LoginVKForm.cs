@@ -87,7 +87,6 @@ namespace RoutesTourists.Forms
             var user = vkApi.Users.Get(new long[] { vkApi.UserId.Value }, ProfileFields.Photo50).FirstOrDefault();
             MessageBox.Show(user.FirstName);
             MessageBox.Show(user.LastName);
-
         }
     }
 }
