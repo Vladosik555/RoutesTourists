@@ -25,6 +25,7 @@ namespace RoutesTourists.Forms
                 var selectionRoutes = context.Routes.Where(r => r.LikesSelection == 5).ToList();
                 AllSelectionTable.DataSource = Tables.GetCharacteristicsTable(selectionRoutes);
                 CurrentRoutes.currentRoutes = selectionRoutes;
+                //скуф
             }
         }
 
