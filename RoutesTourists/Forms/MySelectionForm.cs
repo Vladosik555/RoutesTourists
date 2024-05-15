@@ -86,13 +86,6 @@ namespace RoutesTourists.Forms
             }
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            SelectionForm selectionForm = new SelectionForm();
-            selectionForm.ShowDialog();
-        }
-
         private void SendByMailButton_Click(object sender, EventArgs e)
         {
             using (var context = new RoutesForTouristsContext())
@@ -187,6 +180,13 @@ namespace RoutesTourists.Forms
             BackButton.Left = (int)(MainPanel.Width * 0.07);
             BackButton.Width = (int)((MainPanel.Width - 20) * 0.2);
             BackButton.Height = (int)((MainPanel.Height + 103) * 0.06);
+        }
+
+        private void BackButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            SelectionForm selectionForm = new SelectionForm();
+            selectionForm.ShowDialog();
         }
     }
 }

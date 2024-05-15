@@ -123,6 +123,7 @@
             BackButton.TabIndex = 37;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
+            BackButton.Click += BackButton_Click_1;
             // 
             // budgetRichTextBox
             // 

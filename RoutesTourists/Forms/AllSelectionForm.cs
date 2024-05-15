@@ -24,7 +24,7 @@ namespace RoutesTourists.Forms
             ClientSize = new Size(918, 575);
             using (var context = new RoutesForTouristsContext())
             {
-                var selectionRoutes = context.Routes.Where(r => r.LikesSelection == 5).ToList();
+                var selectionRoutes = context.Routes.Where(r => r.LikesSelection >= 5).ToList();
                 AllSelectionTable.DataSource = Tables.GetCharacteristicsTable(selectionRoutes);
                 CurrentRoutes.currentRoutes = selectionRoutes;
             }

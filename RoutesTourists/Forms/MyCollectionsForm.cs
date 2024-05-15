@@ -47,7 +47,10 @@ namespace RoutesTourists.Forms
                 {
                     foreach (Route nameRoute in CurrentRoutes.currentRoutes)
                     {
-                        choiseComboBox.Items.Add(nameRoute.Name);
+                        if(nameRoute != null)
+                        {
+                            choiseComboBox.Items.Add(nameRoute.Name);
+                        }
                     }
                 }
             }

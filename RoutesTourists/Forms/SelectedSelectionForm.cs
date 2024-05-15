@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VkNet.Model;
 
 namespace RoutesTourists.Forms
 {
@@ -77,7 +78,7 @@ namespace RoutesTourists.Forms
                 if (CurrentRoute.currentRoute.Photo != null)
                 {
                     MemoryStream memoryStream = new MemoryStream(CurrentRoute.currentRoute.Photo);
-                    pictureRoute.Image = Image.FromStream(memoryStream);
+                    pictureRoute.Image = System.Drawing.Image.FromStream(memoryStream);
                 }
             }
         }
@@ -136,8 +137,8 @@ namespace RoutesTourists.Forms
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            SelectionForm selectionForm = new SelectionForm();
-            selectionForm.ShowDialog();
+            HomeForm homeForm = new HomeForm();
+            homeForm.ShowDialog();
         }
 
         private void AddSelectionButton_Click(object sender, EventArgs e)
@@ -155,6 +156,22 @@ namespace RoutesTourists.Forms
                 selection.IdRoutes = CurrentRoute.currentRoute.Id;
                 Route currRoute = context.Routes.FirstOrDefault(r => r.Id.Equals(CurrentRoute.currentRoute.Id));
                 User currUser = context.Users.FirstOrDefault(r => r.IdUser.Equals(CurrentUser.currentUser.IdUser));
+
+
+                var selections = context.Selections.Where(r => r.IdRoutes.Equals(currRoute.Id));
+                if (selections != null)
+                {
+                    foreach (var currSelection in selections)
+                    {
+                        if (currUser.IdSelection.Split(",").Contains(currSelection.Id))
+                        {
+                            MessageBox.Show("Данный маршрут был добавлен ранее в подборки");
+                            return;
+                        }
+                    }
+                }
+
+
                 if (!currUser.AnotherRoutes.Split(",").Contains(currRoute.Id))
                 {
                     if (currUser.AnotherRoutes == null)
