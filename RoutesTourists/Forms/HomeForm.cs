@@ -1,4 +1,5 @@
-﻿using RoutesTourists.Forms;
+﻿using RoutesTourists.Classes;
+using RoutesTourists.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -116,6 +117,15 @@ namespace RoutesTourists
         private void HomeForm_Load(object sender, EventArgs e)
         {
             ClientSize = new Size(918, 661);
+            NameField.Text = CurrentUser.currentUser.Name;
+            SurnameField.Text = CurrentUser.currentUser.Surname;
+            NumberField.Text = CurrentUser.currentUser.Number;
+            MailField.Text = CurrentUser.currentUser.Mail;
+            if (CurrentUser.currentUser.Photo != null)
+            {
+                MemoryStream memoryStream = new MemoryStream(CurrentUser.currentUser.Photo);
+                pictureProfile.Image = Image.FromStream(memoryStream);
+            }
         }
 
         private void SelectionsButton_Click(object sender, EventArgs e)

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -107,7 +108,7 @@ namespace RoutesTourists.Forms
                             Password = passwordField.Text,
                         });
                         string accessToken = vkApi.Token;
-                        var user = vkApi.Users.Get(new long[] { vkApi.UserId.Value }, ProfileFields.Photo50).FirstOrDefault();
+                        var user = vkApi.Users.Get(new long[] { vkApi.UserId.Value }, ProfileFields.PhotoMaxOrig).FirstOrDefault();
                         var currAccount = context.Accounts.FirstOrDefault(r => r.Login.Equals(phoneNumberField.Text) && r.Password.Equals(Hash.CalculateMD5Hash(passwordField.Text)));
                         if (currAccount == null)
                         {
@@ -125,13 +126,20 @@ namespace RoutesTourists.Forms
                             currUser.IdUser = idUser;
                             currUser.Name = user.FirstName;
                             currUser.Surname = user.LastName;
-                            currUser.Mail = null;
+                            currUser.Mail = "пусто";
                             currUser.IdAccount = id;
                             currUser.Number = phoneNumberField.Text;
+                            WebClient wc = new WebClient();
+                            byte[] photo = wc.DownloadData(user.PhotoMaxOrig.ToString());
+                            currUser.Photo = photo;
                             context.Accounts.Add(account);
                             context.Users.Add(currUser);
                             context.SaveChanges();
+                            CurrentUser.currentUser = currUser;
                             MessageBox.Show("Добавление пользователя прошло успешно");
+                            this.Close();
+                            HomeForm homeForm = new HomeForm();
+                            homeForm.ShowDialog();
                         }
                         else
                         {
@@ -142,10 +150,10 @@ namespace RoutesTourists.Forms
                                 return;
                             }
                             CurrentUser.currentUser = currUser;
+                            this.Close();
+                            HomeForm homeForm = new HomeForm();
+                            homeForm.ShowDialog();
                         }
-                        this.Close();
-                        HomeForm homeForm = new HomeForm();
-                        homeForm.ShowDialog();
                     }
                     catch (Exception ex)
                     {

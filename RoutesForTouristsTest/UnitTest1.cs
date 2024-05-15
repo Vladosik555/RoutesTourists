@@ -77,5 +77,23 @@ namespace RoutesForTouristsTest
         {
             Assert.AreEqual("050248cd2efad770e194ca0e12d44264", Hash.CalculateMD5Hash("1234a"));
         }
+        [TestMethod]
+        public void CheckForEnteringTheCorrectCity()
+        {
+            bool actual = Examination.CheckCity("ќмск");
+            Assert.IsTrue(actual);
+        }
+        [TestMethod]
+        public void CheckForEnteringTheInCorrectCity()
+        {
+            bool actual = Examination.CheckCity("ќмск1");
+            Assert.IsFalse(actual);
+        }
+        [TestMethod]
+        public void ItDoesntMatterWheherWeEnterTheCityInCapitalOrSmallLetters()
+        {
+            bool actual = Examination.CheckCity("ћо—к¬а");
+            Assert.IsTrue(actual);
+        }
     }
 }

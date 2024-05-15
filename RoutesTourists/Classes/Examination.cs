@@ -89,5 +89,17 @@ namespace RoutesTourists.Classes
             }
             return false;
         }
+        public static bool CheckCity(string cities)
+        {
+            AllCities Allcities = new AllCities();
+            if (!Allcities.getCities().Contains(cities.ToLower()))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

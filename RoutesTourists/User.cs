@@ -23,5 +23,7 @@ public partial class User
 
     public string? Number { get; set; }
 
+    public byte[]? Photo { get; set; }
+
     public virtual Account IdAccountNavigation { get; set; } = null!;
 }
