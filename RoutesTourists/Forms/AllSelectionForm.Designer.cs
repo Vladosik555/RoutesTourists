@@ -72,6 +72,7 @@
             BackButton.TabIndex = 18;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
+            BackButton.Click += BackButton_Click;
             // 
             // AllSelectionTable
             // 

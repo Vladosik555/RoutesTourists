@@ -54,9 +54,10 @@
             deleteButton.FlatAppearance.BorderSize = 0;
             deleteButton.FlatStyle = FlatStyle.Flat;
             deleteButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            deleteButton.Location = new Point(354, 426);
+            deleteButton.Location = new Point(405, 568);
+            deleteButton.Margin = new Padding(3, 4, 3, 4);
             deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(100, 30);
+            deleteButton.Size = new Size(114, 40);
             deleteButton.TabIndex = 25;
             deleteButton.Text = "Удалить";
             deleteButton.UseVisualStyleBackColor = false;
@@ -70,9 +71,10 @@
             AddSelectionButton.FlatAppearance.BorderSize = 0;
             AddSelectionButton.FlatStyle = FlatStyle.Flat;
             AddSelectionButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            AddSelectionButton.Location = new Point(460, 426);
+            AddSelectionButton.Location = new Point(526, 568);
+            AddSelectionButton.Margin = new Padding(3, 4, 3, 4);
             AddSelectionButton.Name = "AddSelectionButton";
-            AddSelectionButton.Size = new Size(169, 30);
+            AddSelectionButton.Size = new Size(193, 40);
             AddSelectionButton.TabIndex = 24;
             AddSelectionButton.Text = "Добавить в подборку";
             AddSelectionButton.UseVisualStyleBackColor = false;
@@ -82,18 +84,20 @@
             // budgetRichTextBox
             // 
             budgetRichTextBox.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            budgetRichTextBox.Location = new Point(153, 390);
+            budgetRichTextBox.Location = new Point(175, 520);
+            budgetRichTextBox.Margin = new Padding(3, 4, 3, 4);
             budgetRichTextBox.Name = "budgetRichTextBox";
-            budgetRichTextBox.Size = new Size(476, 30);
+            budgetRichTextBox.Size = new Size(543, 39);
             budgetRichTextBox.TabIndex = 23;
             budgetRichTextBox.Text = "";
             // 
             // durationRichTextBox
             // 
             durationRichTextBox.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            durationRichTextBox.Location = new Point(153, 338);
+            durationRichTextBox.Location = new Point(175, 451);
+            durationRichTextBox.Margin = new Padding(3, 4, 3, 4);
             durationRichTextBox.Name = "durationRichTextBox";
-            durationRichTextBox.Size = new Size(476, 30);
+            durationRichTextBox.Size = new Size(543, 39);
             durationRichTextBox.TabIndex = 22;
             durationRichTextBox.Text = "";
             // 
@@ -101,9 +105,9 @@
             // 
             budgetLabel.AutoSize = true;
             budgetLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            budgetLabel.Location = new Point(0, 390);
+            budgetLabel.Location = new Point(0, 520);
             budgetLabel.Name = "budgetLabel";
-            budgetLabel.Size = new Size(73, 21);
+            budgetLabel.Size = new Size(93, 27);
             budgetLabel.TabIndex = 21;
             budgetLabel.Text = "Бюджет";
             // 
@@ -111,18 +115,19 @@
             // 
             durationLabel.AutoSize = true;
             durationLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            durationLabel.Location = new Point(0, 338);
+            durationLabel.Location = new Point(0, 451);
             durationLabel.Name = "durationLabel";
-            durationLabel.Size = new Size(122, 21);
+            durationLabel.Size = new Size(155, 27);
             durationLabel.TabIndex = 20;
             durationLabel.Text = "Длительность";
             // 
             // flightsRichTextBox
             // 
             flightsRichTextBox.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            flightsRichTextBox.Location = new Point(241, 255);
+            flightsRichTextBox.Location = new Point(275, 340);
+            flightsRichTextBox.Margin = new Padding(3, 4, 3, 4);
             flightsRichTextBox.Name = "flightsRichTextBox";
-            flightsRichTextBox.Size = new Size(388, 56);
+            flightsRichTextBox.Size = new Size(443, 73);
             flightsRichTextBox.TabIndex = 19;
             flightsRichTextBox.Text = "";
             // 
@@ -130,18 +135,19 @@
             // 
             flightsLabel.AutoSize = true;
             flightsLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            flightsLabel.Location = new Point(241, 231);
+            flightsLabel.Location = new Point(275, 308);
             flightsLabel.Name = "flightsLabel";
-            flightsLabel.Size = new Size(87, 21);
+            flightsLabel.Size = new Size(112, 27);
             flightsLabel.TabIndex = 18;
             flightsLabel.Text = "Перелёты";
             // 
             // hotelRichTextBox
             // 
             hotelRichTextBox.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            hotelRichTextBox.Location = new Point(241, 168);
+            hotelRichTextBox.Location = new Point(275, 224);
+            hotelRichTextBox.Margin = new Padding(3, 4, 3, 4);
             hotelRichTextBox.Name = "hotelRichTextBox";
-            hotelRichTextBox.Size = new Size(388, 60);
+            hotelRichTextBox.Size = new Size(443, 79);
             hotelRichTextBox.TabIndex = 17;
             hotelRichTextBox.Text = "";
             // 
@@ -149,18 +155,19 @@
             // 
             hotelLabel.AutoSize = true;
             hotelLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            hotelLabel.Location = new Point(241, 144);
+            hotelLabel.Location = new Point(275, 192);
             hotelLabel.Name = "hotelLabel";
-            hotelLabel.Size = new Size(167, 21);
+            hotelLabel.Size = new Size(211, 27);
             hotelLabel.TabIndex = 16;
             hotelLabel.Text = "Отели и гостиницы";
             // 
             // richTextBoxAttractions
             // 
             richTextBoxAttractions.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            richTextBoxAttractions.Location = new Point(241, 84);
+            richTextBoxAttractions.Location = new Point(275, 112);
+            richTextBoxAttractions.Margin = new Padding(3, 4, 3, 4);
             richTextBoxAttractions.Name = "richTextBoxAttractions";
-            richTextBoxAttractions.Size = new Size(388, 57);
+            richTextBoxAttractions.Size = new Size(443, 75);
             richTextBoxAttractions.TabIndex = 15;
             richTextBoxAttractions.Text = "";
             // 
@@ -168,17 +175,18 @@
             // 
             attractionsLabel.AutoSize = true;
             attractionsLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            attractionsLabel.Location = new Point(241, 60);
+            attractionsLabel.Location = new Point(275, 80);
             attractionsLabel.Name = "attractionsLabel";
-            attractionsLabel.Size = new Size(373, 21);
+            attractionsLabel.Size = new Size(476, 27);
             attractionsLabel.TabIndex = 14;
             attractionsLabel.Text = "Достопремичательности и интересные места";
             // 
             // pictureRoute
             // 
-            pictureRoute.Location = new Point(0, 52);
+            pictureRoute.Location = new Point(0, 69);
+            pictureRoute.Margin = new Padding(3, 4, 3, 4);
             pictureRoute.Name = "pictureRoute";
-            pictureRoute.Size = new Size(235, 259);
+            pictureRoute.Size = new Size(269, 345);
             pictureRoute.TabIndex = 13;
             pictureRoute.TabStop = false;
             // 
@@ -189,9 +197,10 @@
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(-1, 427);
+            BackButton.Location = new Point(17, 569);
+            BackButton.Margin = new Padding(3, 4, 3, 4);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(121, 29);
+            BackButton.Size = new Size(138, 39);
             BackButton.TabIndex = 100;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
@@ -203,9 +212,9 @@
             NameLabel.AutoSize = true;
             NameLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
             NameLabel.ImeMode = ImeMode.NoControl;
-            NameLabel.Location = new Point(0, 9);
+            NameLabel.Location = new Point(18, 12);
             NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(225, 26);
+            NameLabel.Size = new Size(276, 35);
             NameLabel.TabIndex = 101;
             NameLabel.Text = "Название подборки";
             // 
@@ -213,9 +222,10 @@
             // 
             NameSelectionText.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             NameSelectionText.ForeColor = Color.Gray;
-            NameSelectionText.Location = new Point(241, 9);
+            NameSelectionText.Location = new Point(275, 12);
+            NameSelectionText.Margin = new Padding(3, 4, 3, 4);
             NameSelectionText.Name = "NameSelectionText";
-            NameSelectionText.Size = new Size(388, 30);
+            NameSelectionText.Size = new Size(443, 39);
             NameSelectionText.TabIndex = 102;
             NameSelectionText.Text = "Запишите название подборки";
             NameSelectionText.Enter += NameSelectionText_Enter;
@@ -223,10 +233,10 @@
             // 
             // SelectedSelectionForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(628, 457);
+            ClientSize = new Size(755, 609);
             Controls.Add(NameSelectionText);
             Controls.Add(NameLabel);
             Controls.Add(BackButton);
@@ -243,6 +253,7 @@
             Controls.Add(richTextBoxAttractions);
             Controls.Add(attractionsLabel);
             Controls.Add(pictureRoute);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "SelectedSelectionForm";
             Text = "SelectedSelectionForm";
             Load += SelectedSelectionForm_Load;

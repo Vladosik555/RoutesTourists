@@ -16,10 +16,12 @@ namespace RoutesTourists.Forms
         public EditingForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void EditingForm_Load(object sender, EventArgs e)
         {
+            ClientSize = new Size(918, 575);
             NameFiled.Text = CurrentUser.currentUser.Name;
             SurnameField.Text = CurrentUser.currentUser.Surname;
             NumberField.Text = CurrentUser.currentUser.Number;
@@ -86,25 +88,35 @@ namespace RoutesTourists.Forms
 
         private void EditingForm_Resize(object sender, EventArgs e)
         {
-            NameLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 27;
-            NameLabel.Left = (int)(MainPanel.Width * 0.6) + 10;
-            SurnameLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 85;
-            SurnameLabel.Left = (int)(MainPanel.Width * 0.6) - 30;
-            SurnameField.Top = (int)((MainPanel.Height + 103) * 0.05) + 85;
-            SurnameField.Left = (int)(MainPanel.Width * 0.65) + 50;
-            SurnameField.Width = (int)((MainPanel.Width - 20) * 0.27);
-            NumberLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 150;
-            NumberLabel.Left = (int)(MainPanel.Width * 0.6) - 25;
-            NumberField.Top = (int)((MainPanel.Height + 103) * 0.05) + 150;
-            NumberField.Left = (int)(MainPanel.Width * 0.65) + 50;
-            NumberField.Width = (int)((MainPanel.Width - 20) * 0.27);
-            MailLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 220;
-            MailLabel.Left = (int)(MainPanel.Width * 0.6) - 10;
-        }
+            NameLabel.Top = (int)((MainPanel.Height + 103) * 0.04);
+            NameLabel.Left = (int)(MainPanel.Width * 0.1);
+            NameFiled.Top = (int)((MainPanel.Height + 103) * 0.04);
+            NameFiled.Left = (int)(MainPanel.Width * 0.1) + NumberLabel.Left + 150;
+            NameFiled.Width = (int)((MainPanel.Width - 20) * 0.4);
+            SurnameLabel.Top = (int)((MainPanel.Height + 103) * 0.04) + NameFiled.Height + 25;
+            SurnameLabel.Left = (int)(MainPanel.Width * 0.1);
+            SurnameField.Top = (int)((MainPanel.Height + 103) * 0.04) + NameFiled.Height + 25;
+            SurnameField.Left = (int)(MainPanel.Width * 0.1) + NumberLabel.Left + 150;
+            SurnameField.Width = (int)((MainPanel.Width - 20) * 0.4);
+            NumberLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + NameFiled.Height + SurnameField.Height + 45;
+            NumberLabel.Left = (int)(MainPanel.Width * 0.1);
+            NumberField.Top = (int)((MainPanel.Height + 103) * 0.05) + NameFiled.Height + SurnameField.Height + 45;
+            NumberField.Left = (int)(MainPanel.Width * 0.1) + NumberLabel.Left + 150;
+            NumberField.Width = (int)((MainPanel.Width - 20) * 0.4);
+            MailLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + NameFiled.Height + SurnameField.Height + NumberField.Height + 65;
+            MailLabel.Left = (int)(MainPanel.Width * 0.1);
+            MaiLField.Top = (int)((MainPanel.Height + 103) * 0.05) + NameFiled.Height + SurnameField.Height + NumberField.Height + 65;
+            MaiLField.Left = (int)(MainPanel.Width * 0.1) + NumberLabel.Left + 150;
+            MaiLField.Width = (int)((MainPanel.Width - 20) * 0.4);
 
-        private void EditingButton_Click(object sender, EventArgs e)
-        {
-
+            EditingButton.Width = (int)((MainPanel.Width - 20) * 0.39);
+            EditingButton.Height = (int)((MainPanel.Height + 103) * 0.115);
+            EditingButton.Top = (int)((MainPanel.Height + 103) * 0.4) + NameFiled.Height + SurnameField.Height + NumberField.Height - 30;
+            EditingButton.Left = (int)(MainPanel.Width * 0.3);
+            BackButton.Width = (int)((MainPanel.Width - 20) * 0.3);
+            BackButton.Height = (int)((MainPanel.Height + 103) * 0.075);
+            BackButton.Top = (int)((MainPanel.Height + 103) * 0.4) + NameFiled.Height + SurnameField.Height + NumberField.Height + EditingButton.Height - 20;
+            BackButton.Left = (int)(MainPanel.Width * 0.35);
         }
     }
 }

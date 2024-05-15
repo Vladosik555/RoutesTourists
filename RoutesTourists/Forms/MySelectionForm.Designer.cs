@@ -142,9 +142,9 @@
             attractionsLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             attractionsLabel.Location = new Point(273, 83);
             attractionsLabel.Name = "attractionsLabel";
-            attractionsLabel.Size = new Size(476, 27);
+            attractionsLabel.Size = new Size(475, 27);
             attractionsLabel.TabIndex = 12;
-            attractionsLabel.Text = "Достопремичательности и интересные места";
+            attractionsLabel.Text = "Достопримечательности и интересные места";
             // 
             // pictureRoute
             // 
@@ -172,7 +172,7 @@
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(-1, 596);
+            BackButton.Location = new Point(12, 596);
             BackButton.Margin = new Padding(3, 4, 3, 4);
             BackButton.Name = "BackButton";
             BackButton.Size = new Size(138, 39);
@@ -188,7 +188,7 @@
             DeleteButton.FlatAppearance.BorderSize = 0;
             DeleteButton.FlatStyle = FlatStyle.Flat;
             DeleteButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            DeleteButton.Location = new Point(591, 596);
+            DeleteButton.Location = new Point(604, 596);
             DeleteButton.Margin = new Padding(3, 4, 3, 4);
             DeleteButton.Name = "DeleteButton";
             DeleteButton.Size = new Size(138, 39);
@@ -204,7 +204,7 @@
             SendByMailButton.FlatAppearance.BorderSize = 0;
             SendByMailButton.FlatStyle = FlatStyle.Flat;
             SendByMailButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            SendByMailButton.Location = new Point(329, 596);
+            SendByMailButton.Location = new Point(342, 596);
             SendByMailButton.Margin = new Padding(3, 4, 3, 4);
             SendByMailButton.Name = "SendByMailButton";
             SendByMailButton.Size = new Size(239, 39);
@@ -218,7 +218,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(730, 632);
+            ClientSize = new Size(756, 632);
             Controls.Add(SendByMailButton);
             Controls.Add(DeleteButton);
             Controls.Add(BackButton);
