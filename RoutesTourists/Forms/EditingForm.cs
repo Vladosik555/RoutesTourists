@@ -46,6 +46,7 @@ namespace RoutesTourists.Forms
 
         private void EditingButton_Click_1(object sender, EventArgs e)
         {
+            //
             if (NameFile.Text == string.Empty)
             {
                 MessageBox.Show("Поле для имени обязательно для заполнения");
