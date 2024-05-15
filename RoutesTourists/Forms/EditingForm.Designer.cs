@@ -101,6 +101,7 @@
             BackButton.TabIndex = 85;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
+            BackButton.Click += BackButton_Click;
             // 
             // MaiLField
             // 

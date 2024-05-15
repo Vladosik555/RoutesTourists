@@ -84,6 +84,11 @@ namespace RoutesTourists.Forms
             }
         }
 
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void EditingForm_Resize(object sender, EventArgs e)
         {
             NameLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 27;
@@ -100,11 +105,6 @@ namespace RoutesTourists.Forms
             NumberField.Width = (int)((MainPanel.Width - 20) * 0.27);
             MailLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 220;
             MailLabel.Left = (int)(MainPanel.Width * 0.6) - 10;
-        }
-
-        private void EditingButton_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
