@@ -88,21 +88,44 @@ namespace RoutesTourists.Forms
 
         private void SendByMailButton_Click(object sender, EventArgs e)
         {
-            MailAddress from = new MailAddress("papa_papa20@list.ru", "RoutesTourists");
-            MailAddress to = new MailAddress("sholokhov.04@list.ru");
+            using (var context = new RoutesForTouristsContext())
+            {
+                try
+                {
+                    var currRoute = context.Routes.FirstOrDefault(r => r.Id.Equals(CurrentSelection.currentSelection.IdRoutes));
+                    if (currRoute == null)
+                    {
+                        MessageBox.Show("Ошибка в доключении к базе данных");
+                        return;
+                    }
+                    MailAddress from = new MailAddress("papa_papa20@list.ru", "RoutesTourists");
+                    MailAddress to = new MailAddress(CurrentUser.currentUser.Mail);
 
-            MailMessage message = new MailMessage(from, to);
-            message.Subject = "Крутое место";
-            message.Body = "Москва";
+                    MailMessage message = new MailMessage(from, to);
+                    message.Subject = CurrentSelection.currentSelection.Name;
+                    message.Body = $"{currRoute.Name}" +
+                        $"\n{currRoute.Attractions}" +
+                        $"\n{currRoute.Hotels}" +
+                        $"\n{currRoute.Flight}" +
+                        $"\n{currRoute.Duration}" +
+                        $"\n{currRoute.Budget}";
 
-            SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.mail.ru";
-            smtp.Port = 587;
-            smtp.EnableSsl = true;
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential(from.Address, "qx9ZZ6t7cnZQpiGSsNQX");
-            smtp.Send(message);
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.mail.ru";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new NetworkCredential(from.Address, "qx9ZZ6t7cnZQpiGSsNQX");
+                    smtp.Send(message);
+                    MessageBox.Show("Сообщение отправлено на почту");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Некоррекнтная почта");
+                    return;
+                }
+            }
         }
     }
 }

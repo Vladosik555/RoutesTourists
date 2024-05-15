@@ -21,5 +21,7 @@ public partial class User
 
     public string? IdSelection { get; set; }
 
+    public string? Number { get; set; }
+
     public virtual Account IdAccountNavigation { get; set; } = null!;
 }
