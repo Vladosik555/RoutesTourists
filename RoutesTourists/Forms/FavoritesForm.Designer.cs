@@ -43,7 +43,7 @@
             FavoritesLabel.Font = new Font("Times New Roman", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             FavoritesLabel.Location = new Point(0, 0);
             FavoritesLabel.Name = "FavoritesLabel";
-            FavoritesLabel.Size = new Size(900, 104);
+            FavoritesLabel.Size = new Size(788, 78);
             FavoritesLabel.TabIndex = 2;
             FavoritesLabel.Text = "Избранное";
             FavoritesLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -53,9 +53,10 @@
             MainPanel.Controls.Add(BackButton);
             MainPanel.Controls.Add(FavoriteTable);
             MainPanel.Dock = DockStyle.Fill;
-            MainPanel.Location = new Point(0, 104);
+            MainPanel.Location = new Point(0, 78);
+            MainPanel.Margin = new Padding(3, 2, 3, 2);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(900, 449);
+            MainPanel.Size = new Size(788, 337);
             MainPanel.TabIndex = 3;
             // 
             // BackButton
@@ -65,10 +66,9 @@
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(371, 379);
-            BackButton.Margin = new Padding(3, 4, 3, 4);
+            BackButton.Location = new Point(325, 284);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(138, 44);
+            BackButton.Size = new Size(121, 33);
             BackButton.TabIndex = 14;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
@@ -81,23 +81,22 @@
             FavoriteTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             FavoriteTable.Dock = DockStyle.Top;
             FavoriteTable.Location = new Point(0, 0);
-            FavoriteTable.Margin = new Padding(3, 4, 3, 4);
             FavoriteTable.Name = "FavoriteTable";
             FavoriteTable.ReadOnly = true;
             FavoriteTable.RowHeadersWidth = 51;
-            FavoriteTable.Size = new Size(900, 355);
+            FavoriteTable.Size = new Size(788, 266);
             FavoriteTable.TabIndex = 13;
+            FavoriteTable.CellDoubleClick += FavoriteTable_CellDoubleClick_1;
             // 
             // FavoritesForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(900, 553);
+            ClientSize = new Size(788, 415);
             Controls.Add(MainPanel);
             Controls.Add(FavoritesLabel);
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(325, 535);
+            MinimumSize = new Size(286, 411);
             Name = "FavoritesForm";
             Text = "FavoritesForm";
             Load += FavoritesForm_Load;

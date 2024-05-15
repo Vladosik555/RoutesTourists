@@ -187,5 +187,12 @@ namespace RoutesTourists.Forms
             deleteButton.Width = (int)((MainPanel.Width - 20) * 0.2);
             deleteButton.Height = (int)((MainPanel.Height + 103) * 0.075);
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FavoritesForm favoritesForm = new FavoritesForm();
+            favoritesForm.ShowDialog();
+        }
     }
 }

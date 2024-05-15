@@ -172,7 +172,7 @@
             attractionsLabel.Name = "attractionsLabel";
             attractionsLabel.Size = new Size(373, 21);
             attractionsLabel.TabIndex = 14;
-            attractionsLabel.Text = "Достопремичательности и интересные места";
+            attractionsLabel.Text = "Достопримечательности и интересные места";
             // 
             // pictureRoute
             // 

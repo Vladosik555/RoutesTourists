@@ -51,27 +51,9 @@ namespace RoutesTourists.Forms
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             HomeForm homeForm = new HomeForm();
             homeForm.Show();
-        }
-
-        private void FavoriteTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                DataGridViewRow selectedRow = FavoriteTable.Rows[e.RowIndex];
-                int position = (int)selectedRow.Cells["Позиция"].Value;
-                if(CurrentRoutes.currentRoutes[position - 1] == null)
-                {
-                    MessageBox.Show("Данный маршрут не был найден");
-                    return;
-                }
-                var route = CurrentRoutes.currentRoutes[position - 1];
-                CurrentRoute.currentRoute = route;
-                DetailsForm detailsForm = new DetailsForm();
-                detailsForm.ShowDialog();
-            }
         }
 
         private void FavoritesForm_Resize(object sender, EventArgs e)
@@ -81,6 +63,24 @@ namespace RoutesTourists.Forms
             BackButton.Height = (int)((MainPanel.Height + 103) * 0.075);
             BackButton.Top = (int)((MainPanel.Height + 103) * 0.1) + FavoriteTable.Height;
             BackButton.Left = (int)(MainPanel.Width * 0.35);
+        }
+
+        private void FavoriteTable_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow selectedRow = FavoriteTable.Rows[e.RowIndex];
+                int position = (int)selectedRow.Cells["Позиция"].Value;
+                if (CurrentRoutes.currentRoutes[position - 1] == null)
+                {
+                    MessageBox.Show("Данный маршрут не был найден");
+                    return;
+                }
+                var route = CurrentRoutes.currentRoutes[position - 1];
+                CurrentRoute.currentRoute = route;
+                DetailsForm detailsForm = new DetailsForm();
+                detailsForm.ShowDialog();
+            }
         }
     }
 }

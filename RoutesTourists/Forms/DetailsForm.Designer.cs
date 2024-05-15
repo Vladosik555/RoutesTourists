@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             MainPanel = new Panel();
+            BackButton = new Button();
             deleteButton = new Button();
             likeButton = new Button();
             budgetRichTextBox = new RichTextBox();
@@ -48,6 +49,7 @@
             // 
             // MainPanel
             // 
+            MainPanel.Controls.Add(BackButton);
             MainPanel.Controls.Add(deleteButton);
             MainPanel.Controls.Add(likeButton);
             MainPanel.Controls.Add(budgetRichTextBox);
@@ -63,9 +65,24 @@
             MainPanel.Controls.Add(pictureRoute);
             MainPanel.Dock = DockStyle.Fill;
             MainPanel.Location = new Point(0, 0);
+            MainPanel.Margin = new Padding(3, 2, 3, 2);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(900, 528);
+            MainPanel.Size = new Size(788, 396);
             MainPanel.TabIndex = 0;
+            // 
+            // BackButton
+            // 
+            BackButton.BackColor = Color.Cyan;
+            BackButton.FlatAppearance.BorderSize = 0;
+            BackButton.FlatStyle = FlatStyle.Flat;
+            BackButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            BackButton.Location = new Point(0, 366);
+            BackButton.Name = "BackButton";
+            BackButton.Size = new Size(100, 30);
+            BackButton.TabIndex = 26;
+            BackButton.Text = "Назад";
+            BackButton.UseVisualStyleBackColor = false;
+            BackButton.Click += BackButton_Click;
             // 
             // deleteButton
             // 
@@ -74,10 +91,9 @@
             deleteButton.FlatAppearance.BorderSize = 0;
             deleteButton.FlatStyle = FlatStyle.Flat;
             deleteButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            deleteButton.Location = new Point(630, 484);
-            deleteButton.Margin = new Padding(3, 4, 3, 4);
+            deleteButton.Location = new Point(551, 363);
             deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(114, 40);
+            deleteButton.Size = new Size(100, 30);
             deleteButton.TabIndex = 25;
             deleteButton.Text = "Удалить";
             deleteButton.UseVisualStyleBackColor = false;
@@ -91,10 +107,9 @@
             likeButton.FlatAppearance.BorderSize = 0;
             likeButton.FlatStyle = FlatStyle.Flat;
             likeButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            likeButton.Location = new Point(750, 484);
-            likeButton.Margin = new Padding(3, 4, 3, 4);
+            likeButton.Location = new Point(656, 363);
             likeButton.Name = "likeButton";
-            likeButton.Size = new Size(114, 40);
+            likeButton.Size = new Size(100, 30);
             likeButton.TabIndex = 24;
             likeButton.Text = "Оценить";
             likeButton.UseVisualStyleBackColor = false;
@@ -105,11 +120,10 @@
             // 
             budgetRichTextBox.BackColor = SystemColors.ControlLightLight;
             budgetRichTextBox.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            budgetRichTextBox.Location = new Point(175, 427);
-            budgetRichTextBox.Margin = new Padding(3, 4, 3, 4);
+            budgetRichTextBox.Location = new Point(153, 320);
             budgetRichTextBox.Name = "budgetRichTextBox";
             budgetRichTextBox.ReadOnly = true;
-            budgetRichTextBox.Size = new Size(689, 39);
+            budgetRichTextBox.Size = new Size(603, 30);
             budgetRichTextBox.TabIndex = 23;
             budgetRichTextBox.Text = "";
             // 
@@ -117,11 +131,10 @@
             // 
             durationRichTextBox.BackColor = SystemColors.ControlLightLight;
             durationRichTextBox.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            durationRichTextBox.Location = new Point(175, 368);
-            durationRichTextBox.Margin = new Padding(3, 4, 3, 4);
+            durationRichTextBox.Location = new Point(153, 276);
             durationRichTextBox.Name = "durationRichTextBox";
             durationRichTextBox.ReadOnly = true;
-            durationRichTextBox.Size = new Size(689, 39);
+            durationRichTextBox.Size = new Size(603, 30);
             durationRichTextBox.TabIndex = 22;
             durationRichTextBox.Text = "";
             // 
@@ -129,9 +142,9 @@
             // 
             budgetLabel.AutoSize = true;
             budgetLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            budgetLabel.Location = new Point(12, 430);
+            budgetLabel.Location = new Point(10, 322);
             budgetLabel.Name = "budgetLabel";
-            budgetLabel.Size = new Size(93, 27);
+            budgetLabel.Size = new Size(73, 21);
             budgetLabel.TabIndex = 21;
             budgetLabel.Text = "Бюджет";
             // 
@@ -139,9 +152,9 @@
             // 
             durationLabel.AutoSize = true;
             durationLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            durationLabel.Location = new Point(0, 371);
+            durationLabel.Location = new Point(0, 278);
             durationLabel.Name = "durationLabel";
-            durationLabel.Size = new Size(155, 27);
+            durationLabel.Size = new Size(122, 21);
             durationLabel.TabIndex = 20;
             durationLabel.Text = "Длительность";
             // 
@@ -149,11 +162,10 @@
             // 
             flightsRichTextBox.BackColor = SystemColors.ControlLightLight;
             flightsRichTextBox.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            flightsRichTextBox.Location = new Point(275, 260);
-            flightsRichTextBox.Margin = new Padding(3, 4, 3, 4);
+            flightsRichTextBox.Location = new Point(241, 195);
             flightsRichTextBox.Name = "flightsRichTextBox";
             flightsRichTextBox.ReadOnly = true;
-            flightsRichTextBox.Size = new Size(589, 73);
+            flightsRichTextBox.Size = new Size(516, 56);
             flightsRichTextBox.TabIndex = 19;
             flightsRichTextBox.Text = "";
             // 
@@ -161,9 +173,9 @@
             // 
             flightsLabel.AutoSize = true;
             flightsLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            flightsLabel.Location = new Point(275, 228);
+            flightsLabel.Location = new Point(241, 171);
             flightsLabel.Name = "flightsLabel";
-            flightsLabel.Size = new Size(112, 27);
+            flightsLabel.Size = new Size(87, 21);
             flightsLabel.TabIndex = 18;
             flightsLabel.Text = "Перелёты";
             // 
@@ -171,11 +183,10 @@
             // 
             hotelRichTextBox.BackColor = SystemColors.ControlLightLight;
             hotelRichTextBox.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            hotelRichTextBox.Location = new Point(275, 144);
-            hotelRichTextBox.Margin = new Padding(3, 4, 3, 4);
+            hotelRichTextBox.Location = new Point(241, 108);
             hotelRichTextBox.Name = "hotelRichTextBox";
             hotelRichTextBox.ReadOnly = true;
-            hotelRichTextBox.Size = new Size(589, 79);
+            hotelRichTextBox.Size = new Size(516, 60);
             hotelRichTextBox.TabIndex = 17;
             hotelRichTextBox.Text = "";
             // 
@@ -183,9 +194,9 @@
             // 
             hotelLabel.AutoSize = true;
             hotelLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            hotelLabel.Location = new Point(275, 112);
+            hotelLabel.Location = new Point(241, 84);
             hotelLabel.Name = "hotelLabel";
-            hotelLabel.Size = new Size(211, 27);
+            hotelLabel.Size = new Size(167, 21);
             hotelLabel.TabIndex = 16;
             hotelLabel.Text = "Отели и гостиницы";
             // 
@@ -193,11 +204,10 @@
             // 
             richTextBoxAttractions.BackColor = SystemColors.ControlLightLight;
             richTextBoxAttractions.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            richTextBoxAttractions.Location = new Point(275, 32);
-            richTextBoxAttractions.Margin = new Padding(3, 4, 3, 4);
+            richTextBoxAttractions.Location = new Point(241, 24);
             richTextBoxAttractions.Name = "richTextBoxAttractions";
             richTextBoxAttractions.ReadOnly = true;
-            richTextBoxAttractions.Size = new Size(589, 75);
+            richTextBoxAttractions.Size = new Size(516, 57);
             richTextBoxAttractions.TabIndex = 15;
             richTextBoxAttractions.Text = "";
             // 
@@ -205,30 +215,28 @@
             // 
             attractionsLabel.AutoSize = true;
             attractionsLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            attractionsLabel.Location = new Point(275, 0);
+            attractionsLabel.Location = new Point(241, 0);
             attractionsLabel.Name = "attractionsLabel";
-            attractionsLabel.Size = new Size(475, 27);
+            attractionsLabel.Size = new Size(373, 21);
             attractionsLabel.TabIndex = 14;
             attractionsLabel.Text = "Достопримечательности и интересные места";
             // 
             // pictureRoute
             // 
-            pictureRoute.Location = new Point(-13, 5);
-            pictureRoute.Margin = new Padding(3, 4, 3, 4);
+            pictureRoute.Location = new Point(-11, 4);
             pictureRoute.Name = "pictureRoute";
-            pictureRoute.Size = new Size(269, 345);
+            pictureRoute.Size = new Size(235, 259);
             pictureRoute.TabIndex = 13;
             pictureRoute.TabStop = false;
             // 
             // DetailsForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(900, 528);
+            ClientSize = new Size(788, 396);
             Controls.Add(MainPanel);
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(400, 400);
+            MinimumSize = new Size(352, 310);
             Name = "DetailsForm";
             Text = "DetailsForm";
             Load += DetailsForm_Load;
@@ -255,5 +263,6 @@
         private RichTextBox richTextBoxAttractions;
         private Label attractionsLabel;
         private PictureBox pictureRoute;
+        private Button BackButton;
     }
 }

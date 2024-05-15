@@ -71,10 +71,6 @@ namespace RoutesTourists.Forms
                         return;
                     }
                 }
-                if (currRoure.Likes == null)
-                {
-                    currRoure.Likes = 0;
-                }
                 if (currUser.AnotherRoutes == null)
                 {
                     currUser.AnotherRoutes = currRoure.Id.ToString();
@@ -84,6 +80,7 @@ namespace RoutesTourists.Forms
                     currUser.AnotherRoutes += "," + currRoure.Id.ToString();
                 }
                 currRoure.Likes += 1;
+                CurrentUser.currentUser = currUser;
                 context.SaveChanges();
                 MessageBox.Show("Данный маршрут был добавлен в избранное");
             }
@@ -102,7 +99,7 @@ namespace RoutesTourists.Forms
                 if (CurrentRoutes.currentRoutes.Count - 1 > count)
                 {
                     count++;
-                    NameLabel.Text = CurrentRoutes.currentRoutes[count].Description;
+                    NameLabel.Text = CurrentRoutes.currentRoutes[count].Name;
                     richTextBoxRoute.Text = CurrentRoutes.currentRoutes[count].Description;
                     CurrentRoute.currentRoute = CurrentRoutes.currentRoutes[count];
                     if (CurrentRoutes.currentRoutes[count].Photo != null)

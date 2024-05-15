@@ -39,9 +39,6 @@ public partial class RoutesForTouristsContext : DbContext
             entity
                 .HasNoKey()
                 .ToTable("Route");
-
-            entity.Property(e => e.Likes).HasDefaultValue(0);
-            entity.Property(e => e.LikesSelection).HasDefaultValue(0);
         });
 
         modelBuilder.Entity<Selection>(entity =>
