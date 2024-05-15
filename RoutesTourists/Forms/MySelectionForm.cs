@@ -36,6 +36,11 @@ namespace RoutesTourists.Forms
                 flightsRichTextBox.Text = route.Flight;
                 durationRichTextBox.Text = route.Duration.ToString();
                 budgetRichTextBox.Text = route.Budget.ToString();
+                if (route.Photo != null)
+                {
+                    MemoryStream memoryStream = new MemoryStream(route.Photo);
+                    pictureRoute.Image = Image.FromStream(memoryStream);
+                }
             }
         }
 
@@ -81,7 +86,7 @@ namespace RoutesTourists.Forms
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             SelectionForm selectionForm = new SelectionForm();
             selectionForm.ShowDialog();
         }

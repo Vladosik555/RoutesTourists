@@ -203,5 +203,12 @@ namespace RoutesTourists.Forms
         {
             ClientSize = new Size(918, 575);
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();  
+            loginForm.ShowDialog();
+        }
     }
 }

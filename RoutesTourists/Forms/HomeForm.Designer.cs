@@ -195,6 +195,7 @@
             ChangeButton.TabIndex = 58;
             ChangeButton.Text = "Изменить";
             ChangeButton.UseVisualStyleBackColor = false;
+            ChangeButton.Click += ChangeButton_Click;
             // 
             // LoginLabel
             // 

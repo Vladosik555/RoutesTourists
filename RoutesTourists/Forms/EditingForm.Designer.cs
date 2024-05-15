@@ -30,12 +30,12 @@
         {
             EntryLabel = new Label();
             MainPanel = new Panel();
+            MaiLFiel = new TextBox();
+            NumberFiel = new TextBox();
+            SurnameField = new TextBox();
+            NameFile = new TextBox();
             EditingButton = new Button();
             BackButton = new Button();
-            MaiLField = new Label();
-            NumberField = new Label();
-            SurnameField = new Label();
-            NameFiled = new Label();
             MailLabel = new Label();
             NumberLabel = new Label();
             SurnameLabel = new Label();
@@ -57,12 +57,12 @@
             // 
             // MainPanel
             // 
+            MainPanel.Controls.Add(MaiLFiel);
+            MainPanel.Controls.Add(NumberFiel);
+            MainPanel.Controls.Add(SurnameField);
+            MainPanel.Controls.Add(NameFile);
             MainPanel.Controls.Add(EditingButton);
             MainPanel.Controls.Add(BackButton);
-            MainPanel.Controls.Add(MaiLField);
-            MainPanel.Controls.Add(NumberField);
-            MainPanel.Controls.Add(SurnameField);
-            MainPanel.Controls.Add(NameFiled);
             MainPanel.Controls.Add(MailLabel);
             MainPanel.Controls.Add(NumberLabel);
             MainPanel.Controls.Add(SurnameLabel);
@@ -73,6 +73,42 @@
             MainPanel.Name = "MainPanel";
             MainPanel.Size = new Size(459, 284);
             MainPanel.TabIndex = 3;
+            // 
+            // MaiLFiel
+            // 
+            MaiLFiel.BackColor = Color.FromArgb(192, 255, 255);
+            MaiLFiel.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            MaiLFiel.Location = new Point(189, 146);
+            MaiLFiel.Name = "MaiLFiel";
+            MaiLFiel.Size = new Size(270, 26);
+            MaiLFiel.TabIndex = 90;
+            // 
+            // NumberFiel
+            // 
+            NumberFiel.BackColor = Color.FromArgb(192, 255, 255);
+            NumberFiel.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            NumberFiel.Location = new Point(186, 103);
+            NumberFiel.Name = "NumberFiel";
+            NumberFiel.Size = new Size(270, 26);
+            NumberFiel.TabIndex = 89;
+            // 
+            // SurnameField
+            // 
+            SurnameField.BackColor = Color.FromArgb(192, 255, 255);
+            SurnameField.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SurnameField.Location = new Point(186, 58);
+            SurnameField.Name = "SurnameField";
+            SurnameField.Size = new Size(270, 26);
+            SurnameField.TabIndex = 88;
+            // 
+            // NameFile
+            // 
+            NameFile.BackColor = Color.FromArgb(192, 255, 255);
+            NameFile.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            NameFile.Location = new Point(186, 20);
+            NameFile.Name = "NameFile";
+            NameFile.Size = new Size(270, 26);
+            NameFile.TabIndex = 87;
             // 
             // EditingButton
             // 
@@ -87,6 +123,7 @@
             EditingButton.TabIndex = 86;
             EditingButton.Text = "Редактировать";
             EditingButton.UseVisualStyleBackColor = false;
+            EditingButton.Click += EditingButton_Click_1;
             // 
             // BackButton
             // 
@@ -102,42 +139,6 @@
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
             BackButton.Click += BackButton_Click;
-            // 
-            // MaiLField
-            // 
-            MaiLField.BackColor = Color.FromArgb(192, 255, 255);
-            MaiLField.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            MaiLField.Location = new Point(189, 144);
-            MaiLField.Name = "MaiLField";
-            MaiLField.Size = new Size(264, 23);
-            MaiLField.TabIndex = 84;
-            // 
-            // NumberField
-            // 
-            NumberField.BackColor = Color.FromArgb(192, 255, 255);
-            NumberField.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            NumberField.Location = new Point(186, 104);
-            NumberField.Name = "NumberField";
-            NumberField.Size = new Size(267, 23);
-            NumberField.TabIndex = 83;
-            // 
-            // SurnameField
-            // 
-            SurnameField.BackColor = Color.FromArgb(192, 255, 255);
-            SurnameField.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            SurnameField.Location = new Point(186, 60);
-            SurnameField.Name = "SurnameField";
-            SurnameField.Size = new Size(267, 23);
-            SurnameField.TabIndex = 82;
-            // 
-            // NameFiled
-            // 
-            NameFiled.BackColor = Color.FromArgb(192, 255, 255);
-            NameFiled.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            NameFiled.Location = new Point(186, 21);
-            NameFiled.Name = "NameFiled";
-            NameFiled.Size = new Size(267, 23);
-            NameFiled.TabIndex = 81;
             // 
             // MailLabel
             // 
@@ -202,13 +203,13 @@
         private Panel MainPanel;
         private Button EditingButton;
         private Button BackButton;
-        private Label MaiLField;
-        private Label NumberField;
-        private Label SurnameField;
-        private Label NameFiled;
         private Label MailLabel;
         private Label NumberLabel;
         private Label SurnameLabel;
         private Label NameLabel;
+        private TextBox MaiLFiel;
+        private TextBox NumberFiel;
+        private TextBox SurnameField;
+        private TextBox NameFile;
     }
 }

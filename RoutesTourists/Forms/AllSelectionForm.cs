@@ -30,7 +30,23 @@ namespace RoutesTourists.Forms
             }
         }
 
-        private void AllSelectionTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void AllSelectionForm_Resize(object sender, EventArgs e)
+        {
+            AllSelectionTable.Height = (int)((MainPanel.Height + 103) * 0.6);
+            BackButton.Width = (int)((MainPanel.Width - 20) * 0.3);
+            BackButton.Height = (int)((MainPanel.Height + 103) * 0.075);
+            BackButton.Top = (int)((MainPanel.Height + 103) * 0.1) + AllSelectionTable.Height;
+            BackButton.Left = (int)(MainPanel.Width * 0.35);
+        }
+
+        private void BackButton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeForm homeForm = new HomeForm();
+            homeForm.ShowDialog();
+        }
+
+        private void AllSelectionTable_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -46,22 +62,6 @@ namespace RoutesTourists.Forms
                 SelectedSelectionForm selectedSelectionForm = new SelectedSelectionForm();
                 selectedSelectionForm.ShowDialog();
             }
-        }
-
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            HomeForm homeForm = new HomeForm();
-            homeForm.ShowDialog();
-        }
-
-        private void AllSelectionForm_Resize(object sender, EventArgs e)
-        {
-            AllSelectionTable.Height = (int)((MainPanel.Height + 103) * 0.6);
-            BackButton.Width = (int)((MainPanel.Width - 20) * 0.3);
-            BackButton.Height = (int)((MainPanel.Height + 103) * 0.075);
-            BackButton.Top = (int)((MainPanel.Height + 103) * 0.1) + AllSelectionTable.Height;
-            BackButton.Left = (int)(MainPanel.Width * 0.35);
         }
     }
 }

@@ -80,39 +80,6 @@ namespace RoutesTourists.Forms
                     pictureRoute.Image = Image.FromStream(memoryStream);
                 }
             }
-            /*
-                if (CurrentRoute.currentRoute == null)
-                {
-                    MessageBox.Show("Данный маршрут не был найден");
-                    return;
-                }
-            if (CurrentUser.currentUser.AnotherRoutes != null)
-            {
-                if (CurrentUser.currentUser.AnotherRoutes.Equals(CurrentRoute.currentRoute.Id))
-                {
-                    deleteButton.Enabled = true;
-                    deleteButton.Visible = true;
-                }
-                else
-                {
-                    if (CurrentUser.currentUser.AnotherRoutes.Split(",").Contains(CurrentRoute.currentRoute.Id))
-                    {
-                        deleteButton.Enabled = true;
-                        deleteButton.Visible = true;
-                    }
-                    else
-                    {
-                        AddSelectionButton.Enabled = true;
-                        AddSelectionButton.Visible = true;
-                    }
-                }
-            }
-            if (CurrentUser.currentUser.AnotherRoutes == null)
-            {
-                AddSelectionButton.Enabled = true;
-                AddSelectionButton.Visible = true;
-            }
-            */
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -168,7 +135,7 @@ namespace RoutesTourists.Forms
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             SelectionForm selectionForm = new SelectionForm();
             selectionForm.ShowDialog();
         }

@@ -148,5 +148,48 @@ namespace RoutesTourists
             EditingForm editingForm = new EditingForm();
             editingForm.Show();
         }
+
+        private void ChangeButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.png;*.jpeg;*.gif;*.raw;*.jpg)|*.png;*.jpeg;*.gif;*.raw|All files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    pictureProfile.Image = new Bitmap(openFileDialog.FileName);
+                }
+                catch
+                {
+                    MessageBox.Show("Невозможно загрузить эту картинку", "Ошибка загрузки", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            byte[] imageBytes;
+            try
+            {
+                using (var context = new RoutesForTouristsContext())
+                {
+                    var person = context.Users.FirstOrDefault(r => r.IdUser.Equals(CurrentUser.currentUser.IdUser));
+                    if (person == null)
+                    {
+                        MessageBox.Show("Пользователь не найден");
+                        return;
+                    }
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        pictureProfile.Image.Save(ms, pictureProfile.Image.RawFormat);
+                        imageBytes = ms.ToArray();
+                    }
+                    CurrentUser.currentUser.Photo = imageBytes;
+                    person.Photo = CurrentUser.currentUser.Photo;
+                    CurrentUser.currentUser = person;
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

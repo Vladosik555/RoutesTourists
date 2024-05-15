@@ -73,54 +73,55 @@
             MainPanel.Controls.Add(FilteredTable);
             MainPanel.Dock = DockStyle.Fill;
             MainPanel.Location = new Point(0, 0);
+            MainPanel.Margin = new Padding(3, 2, 3, 2);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(900, 528);
+            MainPanel.Size = new Size(788, 396);
             MainPanel.TabIndex = 0;
             // 
             // endBudget
             // 
             endBudget.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            endBudget.Location = new Point(478, 440);
-            endBudget.Margin = new Padding(3, 4, 3, 4);
+            endBudget.Location = new Point(418, 330);
             endBudget.Name = "endBudget";
-            endBudget.Size = new Size(105, 30);
+            endBudget.Size = new Size(92, 26);
             endBudget.TabIndex = 30;
+            endBudget.TextChanged += endBudget_TextChanged_1;
             // 
             // endLabel_1
             // 
             endLabel_1.AutoSize = true;
             endLabel_1.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            endLabel_1.Location = new Point(440, 443);
+            endLabel_1.Location = new Point(385, 332);
             endLabel_1.Name = "endLabel_1";
-            endLabel_1.Size = new Size(47, 31);
+            endLabel_1.Size = new Size(35, 24);
             endLabel_1.TabIndex = 29;
             endLabel_1.Text = "До";
             // 
             // startBudget
             // 
             startBudget.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            startBudget.Location = new Point(328, 441);
-            startBudget.Margin = new Padding(3, 4, 3, 4);
+            startBudget.Location = new Point(287, 331);
             startBudget.Name = "startBudget";
-            startBudget.Size = new Size(105, 30);
+            startBudget.Size = new Size(92, 26);
             startBudget.TabIndex = 28;
+            startBudget.TextChanged += startBudget_TextChanged_1;
             // 
             // endDuration
             // 
             endDuration.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            endDuration.Location = new Point(227, 441);
-            endDuration.Margin = new Padding(3, 4, 3, 4);
+            endDuration.Location = new Point(199, 331);
             endDuration.Name = "endDuration";
-            endDuration.Size = new Size(47, 30);
+            endDuration.Size = new Size(42, 26);
             endDuration.TabIndex = 27;
+            endDuration.TextChanged += endDuration_TextChanged_1;
             // 
             // startLabel_1
             // 
             startLabel_1.AutoSize = true;
             startLabel_1.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            startLabel_1.Location = new Point(281, 440);
+            startLabel_1.Location = new Point(246, 330);
             startLabel_1.Name = "startLabel_1";
-            startLabel_1.Size = new Size(47, 31);
+            startLabel_1.Size = new Size(35, 24);
             startLabel_1.TabIndex = 26;
             startLabel_1.Text = "От";
             // 
@@ -128,9 +129,9 @@
             // 
             endLabel.AutoSize = true;
             endLabel.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            endLabel.Location = new Point(181, 440);
+            endLabel.Location = new Point(158, 330);
             endLabel.Name = "endLabel";
-            endLabel.Size = new Size(47, 31);
+            endLabel.Size = new Size(35, 24);
             endLabel.TabIndex = 25;
             endLabel.Text = "До";
             // 
@@ -138,20 +139,20 @@
             // 
             startLabel.AutoSize = true;
             startLabel.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            startLabel.Location = new Point(79, 440);
+            startLabel.Location = new Point(69, 330);
             startLabel.Name = "startLabel";
-            startLabel.Size = new Size(47, 31);
+            startLabel.Size = new Size(35, 24);
             startLabel.TabIndex = 24;
             startLabel.Text = "От";
             // 
             // startDuration
             // 
             startDuration.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            startDuration.Location = new Point(126, 440);
-            startDuration.Margin = new Padding(3, 4, 3, 4);
+            startDuration.Location = new Point(110, 330);
             startDuration.Name = "startDuration";
-            startDuration.Size = new Size(47, 30);
+            startDuration.Size = new Size(42, 26);
             startDuration.TabIndex = 23;
+            startDuration.TextChanged += startDuration_TextChanged_1;
             // 
             // BackButton
             // 
@@ -159,13 +160,13 @@
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(384, 479);
-            BackButton.Margin = new Padding(3, 4, 3, 4);
+            BackButton.Location = new Point(336, 359);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(103, 40);
+            BackButton.Size = new Size(90, 30);
             BackButton.TabIndex = 22;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
+            BackButton.Click += BackButton_Click_1;
             // 
             // seasonalityComboBox
             // 
@@ -173,19 +174,19 @@
             seasonalityComboBox.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             seasonalityComboBox.FormattingEnabled = true;
             seasonalityComboBox.Items.AddRange(new object[] { "Зима", "Весна", "Лето", "Осень" });
-            seasonalityComboBox.Location = new Point(590, 436);
-            seasonalityComboBox.Margin = new Padding(3, 4, 3, 4);
+            seasonalityComboBox.Location = new Point(516, 327);
             seasonalityComboBox.Name = "seasonalityComboBox";
-            seasonalityComboBox.Size = new Size(188, 35);
+            seasonalityComboBox.Size = new Size(165, 29);
             seasonalityComboBox.TabIndex = 21;
+            seasonalityComboBox.SelectedIndexChanged += seasonalityComboBox_SelectedIndexChanged_1;
             // 
             // seasonalityLabel
             // 
             seasonalityLabel.AutoSize = true;
             seasonalityLabel.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            seasonalityLabel.Location = new Point(617, 381);
+            seasonalityLabel.Location = new Point(540, 286);
             seasonalityLabel.Name = "seasonalityLabel";
-            seasonalityLabel.Size = new Size(155, 31);
+            seasonalityLabel.Size = new Size(119, 24);
             seasonalityLabel.TabIndex = 20;
             seasonalityLabel.Text = "Сезонность";
             // 
@@ -193,9 +194,9 @@
             // 
             budgetLabel.AutoSize = true;
             budgetLabel.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            budgetLabel.Location = new Point(384, 381);
+            budgetLabel.Location = new Point(336, 286);
             budgetLabel.Name = "budgetLabel";
-            budgetLabel.Size = new Size(109, 31);
+            budgetLabel.Size = new Size(84, 24);
             budgetLabel.TabIndex = 19;
             budgetLabel.Text = "Бюджет";
             // 
@@ -203,9 +204,9 @@
             // 
             durationLabel.AutoSize = true;
             durationLabel.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            durationLabel.Location = new Point(104, 381);
+            durationLabel.Location = new Point(91, 286);
             durationLabel.Name = "durationLabel";
-            durationLabel.Size = new Size(185, 31);
+            durationLabel.Size = new Size(143, 24);
             durationLabel.TabIndex = 18;
             durationLabel.Text = "Длительность";
             // 
@@ -216,22 +217,21 @@
             FilteredTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             FilteredTable.Dock = DockStyle.Top;
             FilteredTable.Location = new Point(0, 0);
-            FilteredTable.Margin = new Padding(3, 4, 3, 4);
             FilteredTable.Name = "FilteredTable";
             FilteredTable.ReadOnly = true;
             FilteredTable.RowHeadersWidth = 51;
-            FilteredTable.Size = new Size(900, 368);
+            FilteredTable.Size = new Size(788, 276);
             FilteredTable.TabIndex = 17;
+            FilteredTable.CellContentClick += FilteredTable_CellContentClick;
             // 
             // CharacteristicsForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(900, 528);
+            ClientSize = new Size(788, 396);
             Controls.Add(MainPanel);
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(815, 500);
+            MinimumSize = new Size(715, 385);
             Name = "CharacteristicsForm";
             Text = "CharacteristicsForm";
             Load += CharacteristicsForm_Load;

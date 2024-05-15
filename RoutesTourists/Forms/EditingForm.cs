@@ -20,73 +20,10 @@ namespace RoutesTourists.Forms
 
         private void EditingForm_Load(object sender, EventArgs e)
         {
-            NameFiled.Text = CurrentUser.currentUser.Name;
+            NameFile.Text = CurrentUser.currentUser.Name;
             SurnameField.Text = CurrentUser.currentUser.Surname;
-            NumberField.Text = CurrentUser.currentUser.Number;
-            MaiLField.Text = CurrentUser.currentUser.Mail;
-        }
-
-        private void EditingButton_Click(object sender, EventArgs e)
-        {
-            if (NameFiled.Text == string.Empty)
-            {
-                MessageBox.Show("Поле для имени обязательно для заполнения");
-                return;
-            }
-            if (SurnameField.Text == string.Empty)
-            {
-                MessageBox.Show("Поле для фамилии обязательно для заполения");
-                return;
-            }
-            if (NumberField.Text == string.Empty)
-            {
-                MessageBox.Show("Поле для номера телефона обязательно для заполнения");
-                return;
-            }
-            if (MaiLField.Text == string.Empty)
-            {
-                MessageBox.Show("Поле для почты обязательно для заполнения");
-                return;
-            }
-            if (!Examination.CheckLetter(NameFiled.Text))
-            {
-                MessageBox.Show("Имя должно содержать только буквы");
-                return;
-            }
-            if (!Examination.CheckLetter(SurnameField.Text))
-            {
-                MessageBox.Show("Фамилия должна содержать только буквы");
-                return;
-            }
-            if (!Examination.CheckPhoneNumber(NumberField.Text))
-            {
-                MessageBox.Show("Некорректный номер телефона");
-                return;
-            }
-            if (!Examination.CheckFormatMail(MaiLField.Text))
-            {
-                MessageBox.Show("Некорректный формат почты");
-                return;
-            }
-            using (var context = new RoutesForTouristsContext())
-            {
-                var currUser = context.Users.FirstOrDefault(r => r.IdUser.Equals(CurrentUser.currentUser.IdUser));
-                if (currUser == null)
-                {
-                    MessageBox.Show("Ошибка в подключении к базе данных");
-                    return;
-                }
-                currUser.Name = NameFiled.Text;
-                currUser.Surname = SurnameField.Text;
-                currUser.Number = NumberField.Text;
-                currUser.Mail = MaiLField.Text;
-                context.SaveChanges();
-            }
-        }
-
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-
+            NumberFiel.Text = CurrentUser.currentUser.Number;
+            MaiLFiel.Text = CurrentUser.currentUser.Mail;
         }
 
         private void EditingForm_Resize(object sender, EventArgs e)
@@ -100,11 +37,79 @@ namespace RoutesTourists.Forms
             SurnameField.Width = (int)((MainPanel.Width - 20) * 0.27);
             NumberLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 150;
             NumberLabel.Left = (int)(MainPanel.Width * 0.6) - 25;
-            NumberField.Top = (int)((MainPanel.Height + 103) * 0.05) + 150;
-            NumberField.Left = (int)(MainPanel.Width * 0.65) + 50;
-            NumberField.Width = (int)((MainPanel.Width - 20) * 0.27);
+            NumberFiel.Top = (int)((MainPanel.Height + 103) * 0.05) + 150;
+            NumberFiel.Left = (int)(MainPanel.Width * 0.65) + 50;
+            NumberFiel.Width = (int)((MainPanel.Width - 20) * 0.27);
             MailLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 220;
             MailLabel.Left = (int)(MainPanel.Width * 0.6) - 10;
+        }
+
+        private void EditingButton_Click_1(object sender, EventArgs e)
+        {
+            if (NameFile.Text == string.Empty)
+            {
+                MessageBox.Show("Поле для имени обязательно для заполнения");
+                return;
+            }
+            if (SurnameField.Text == string.Empty)
+            {
+                MessageBox.Show("Поле для фамилии обязательно для заполения");
+                return;
+            }
+            if (NumberFiel.Text == string.Empty)
+            {
+                MessageBox.Show("Поле для номера телефона обязательно для заполнения");
+                return;
+            }
+            if (MaiLFiel.Text == string.Empty)
+            {
+                MessageBox.Show("Поле для почты обязательно для заполнения");
+                return;
+            }
+            if (!Examination.CheckLetter(NameFile.Text))
+            {
+                MessageBox.Show("Имя должно содержать только буквы");
+                return;
+            }
+            if (!Examination.CheckLetter(SurnameField.Text))
+            {
+                MessageBox.Show("Фамилия должна содержать только буквы");
+                return;
+            }
+            if (!Examination.CheckPhoneNumber(NumberFiel.Text))
+            {
+                MessageBox.Show("Некорректный номер телефона");
+                return;
+            }
+            if (!Examination.CheckFormatMail(MaiLFiel.Text))
+            {
+                MessageBox.Show("Некорректный формат почты");
+                return;
+            }
+            using (var context = new RoutesForTouristsContext())
+            {
+                var currUser = context.Users.FirstOrDefault(r => r.IdUser.Equals(CurrentUser.currentUser.IdUser));
+                if (currUser == null)
+                {
+                    MessageBox.Show("Ошибка в подключении к базе данных");
+                    return;
+                }
+                currUser.Name = NameFile.Text;
+                currUser.Surname = SurnameField.Text;
+                currUser.Number = NumberFiel.Text;
+                currUser.Mail = MaiLFiel.Text;
+                currUser.Number = NumberFiel.Text;
+                CurrentUser.currentUser = currUser;
+                context.SaveChanges();
+                MessageBox.Show("Редактирование прошло успешно");
+            }
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            HomeForm homeForm = new HomeForm(); 
+            homeForm.ShowDialog();
         }
     }
 }

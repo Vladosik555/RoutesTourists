@@ -43,7 +43,7 @@
             EntryLabel.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             EntryLabel.Location = new Point(0, 0);
             EntryLabel.Name = "EntryLabel";
-            EntryLabel.Size = new Size(576, 96);
+            EntryLabel.Size = new Size(504, 72);
             EntryLabel.TabIndex = 14;
             EntryLabel.Text = "Все подборки";
             EntryLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -53,9 +53,10 @@
             MainPanel.Controls.Add(BackButton);
             MainPanel.Controls.Add(AllSelectionTable);
             MainPanel.Dock = DockStyle.Fill;
-            MainPanel.Location = new Point(0, 96);
+            MainPanel.Location = new Point(0, 72);
+            MainPanel.Margin = new Padding(3, 2, 3, 2);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(576, 532);
+            MainPanel.Size = new Size(504, 399);
             MainPanel.TabIndex = 15;
             // 
             // BackButton
@@ -65,13 +66,13 @@
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(216, 490);
-            BackButton.Margin = new Padding(3, 4, 3, 4);
+            BackButton.Location = new Point(189, 368);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(138, 39);
+            BackButton.Size = new Size(121, 29);
             BackButton.TabIndex = 18;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
+            BackButton.Click += BackButton_Click_1;
             // 
             // AllSelectionTable
             // 
@@ -80,23 +81,22 @@
             AllSelectionTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             AllSelectionTable.Dock = DockStyle.Top;
             AllSelectionTable.Location = new Point(0, 0);
-            AllSelectionTable.Margin = new Padding(3, 4, 3, 4);
             AllSelectionTable.Name = "AllSelectionTable";
             AllSelectionTable.ReadOnly = true;
             AllSelectionTable.RowHeadersWidth = 51;
-            AllSelectionTable.Size = new Size(576, 460);
+            AllSelectionTable.Size = new Size(504, 345);
             AllSelectionTable.TabIndex = 17;
+            AllSelectionTable.CellDoubleClick += AllSelectionTable_CellDoubleClick_1;
             // 
             // AllSelectionForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(576, 628);
+            ClientSize = new Size(504, 471);
             Controls.Add(MainPanel);
             Controls.Add(EntryLabel);
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(325, 535);
+            MinimumSize = new Size(286, 411);
             Name = "AllSelectionForm";
             Text = "AllSelectionForm";
             Load += AllSelectionForm_Load;
