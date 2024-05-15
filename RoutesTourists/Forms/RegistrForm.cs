@@ -127,6 +127,24 @@ namespace RoutesTourists
             }
         }
 
+        private void NumberField_Enter(object sender, EventArgs e)
+        {
+            if (NumberField.Text.Equals("Введите номер телефона"))
+            {
+                NumberField.Text = string.Empty;
+                NumberField.ForeColor = Color.Black;
+            }
+        }
+
+        private void NumberField_Leave(object sender, EventArgs e)
+        {
+            if (NumberField.Text.Equals(string.Empty))
+            {
+                NumberField.ForeColor = Color.Gray;
+                NumberField.Text = "Введите номер телефона";
+            }
+        }
+
         private void RegistrButton_Click(object sender, EventArgs e)
         {
             if (LoginField.Text == string.Empty || LoginField.Text.Equals("Введите логин"))
@@ -159,6 +177,11 @@ namespace RoutesTourists
                 MessageBox.Show("Поле для почты обязательно для заполнения");
                 return;
             }
+            if(NumberField.Text == string.Empty || NumberField.Text.Equals("Введите номер телефона"))
+            {
+                MessageBox.Show("Поле для телефона обязательно для заполнения");
+                return;
+            }
             if (!passwordField.Text.Equals(password2Field.Text))
             {
                 MessageBox.Show("Пароли должны совпадать");
@@ -179,6 +202,11 @@ namespace RoutesTourists
                 MessageBox.Show("Некорректный формат почты");
                 return;
             }
+            if (!Examination.CheckPhoneNumber(NumberField.Text))
+            {
+                MessageBox.Show("Некорректный номер телефона");
+                return;
+            }
             using (var context = new RoutesForTouristsContext())
             {
                 string id = Guid.NewGuid().ToString();
@@ -196,6 +224,7 @@ namespace RoutesTourists
                 user.Surname = SurnameField.Text;
                 user.Mail = MailField.Text;
                 user.IdAccount = id;
+                user.Number = NumberField.Text;
                 context.Accounts.Add(account);
                 context.Users.Add(user);
                 context.SaveChanges();

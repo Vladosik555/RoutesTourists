@@ -21,28 +21,28 @@ namespace RoutesTourists
 
         private void RecommenButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             RecommenForm recommenForm = new RecommenForm();
             recommenForm.ShowDialog();
         }
 
         private void CharacteristicsButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             CharacteristicsForm characteristicsForm = new CharacteristicsForm();
             characteristicsForm.ShowDialog();
         }
 
         private void FavoritesButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             FavoritesForm favoritesForm = new FavoritesForm();
             favoritesForm.ShowDialog();
         }
 
         private void MySelectedButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             MyCollectionsForm myCollectionsForm = new MyCollectionsForm();
             myCollectionsForm.ShowDialog();
         }
@@ -120,7 +120,7 @@ namespace RoutesTourists
 
         private void SelectionsButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             AllSelectionForm allSelectionForm = new AllSelectionForm();
             allSelectionForm.ShowDialog();
         }
@@ -130,6 +130,13 @@ namespace RoutesTourists
             this.Hide();
             InitialForm initialForm = new InitialForm();
             initialForm.Show();
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            EditingForm editingForm = new EditingForm();
+            editingForm.Show();
         }
     }
 }
