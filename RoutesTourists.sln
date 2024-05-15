@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutesTourists", "RoutesTourists\RoutesTourists.csproj", "{820BBE24-DE5C-4570-BF7B-69B843449EEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoutesTourists", "RoutesTourists\RoutesTourists.csproj", "{820BBE24-DE5C-4570-BF7B-69B843449EEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutesForTouristsTest", "RoutesForTouristsTest\RoutesForTouristsTest.csproj", "{E11B25A9-C4C3-4C8E-8AA5-7A03F72E1681}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{820BBE24-DE5C-4570-BF7B-69B843449EEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{820BBE24-DE5C-4570-BF7B-69B843449EEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{820BBE24-DE5C-4570-BF7B-69B843449EEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E11B25A9-C4C3-4C8E-8AA5-7A03F72E1681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E11B25A9-C4C3-4C8E-8AA5-7A03F72E1681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E11B25A9-C4C3-4C8E-8AA5-7A03F72E1681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E11B25A9-C4C3-4C8E-8AA5-7A03F72E1681}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

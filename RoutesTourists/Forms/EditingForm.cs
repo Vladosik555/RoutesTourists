@@ -101,5 +101,10 @@ namespace RoutesTourists.Forms
             MailLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 220;
             MailLabel.Left = (int)(MainPanel.Width * 0.6) - 10;
         }
+
+        private void EditingButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

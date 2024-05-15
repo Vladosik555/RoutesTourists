@@ -36,14 +36,21 @@ namespace RoutesTourists.Classes
         public static bool CheckFormatMail(string mail)
         {
             MailList emailList = new MailList();
-            foreach (string email in emailList.getMail())
+            if (!emailList.getMail().Contains(mail))
             {
-                if (mail.EndsWith(email))
+                foreach (string email in emailList.getMail())
                 {
-                    return true;
+                    if (mail.EndsWith(email))
+                    {
+                        return true;
+                    }
                 }
+                return false;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
         public static string GetAllNumber(string input)
         {

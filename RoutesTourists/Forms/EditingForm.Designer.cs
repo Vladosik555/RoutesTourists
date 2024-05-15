@@ -50,7 +50,7 @@
             EntryLabel.Font = new Font("Times New Roman", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             EntryLabel.Location = new Point(0, 0);
             EntryLabel.Name = "EntryLabel";
-            EntryLabel.Size = new Size(525, 104);
+            EntryLabel.Size = new Size(459, 78);
             EntryLabel.TabIndex = 2;
             EntryLabel.Text = "Редактирование";
             EntryLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -68,9 +68,10 @@
             MainPanel.Controls.Add(SurnameLabel);
             MainPanel.Controls.Add(NameLabel);
             MainPanel.Dock = DockStyle.Fill;
-            MainPanel.Location = new Point(0, 104);
+            MainPanel.Location = new Point(0, 78);
+            MainPanel.Margin = new Padding(3, 2, 3, 2);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(525, 379);
+            MainPanel.Size = new Size(459, 284);
             MainPanel.TabIndex = 3;
             // 
             // EditingButton
@@ -80,10 +81,9 @@
             EditingButton.FlatAppearance.BorderSize = 0;
             EditingButton.FlatStyle = FlatStyle.Flat;
             EditingButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            EditingButton.Location = new Point(150, 256);
-            EditingButton.Margin = new Padding(3, 4, 3, 4);
+            EditingButton.Location = new Point(131, 192);
             EditingButton.Name = "EditingButton";
-            EditingButton.Size = new Size(203, 44);
+            EditingButton.Size = new Size(178, 33);
             EditingButton.TabIndex = 86;
             EditingButton.Text = "Редактировать";
             EditingButton.UseVisualStyleBackColor = false;
@@ -95,10 +95,9 @@
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(180, 308);
-            BackButton.Margin = new Padding(3, 4, 3, 4);
+            BackButton.Location = new Point(158, 231);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(138, 44);
+            BackButton.Size = new Size(121, 33);
             BackButton.TabIndex = 85;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
@@ -107,45 +106,45 @@
             // 
             MaiLField.BackColor = Color.FromArgb(192, 255, 255);
             MaiLField.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            MaiLField.Location = new Point(216, 192);
+            MaiLField.Location = new Point(189, 144);
             MaiLField.Name = "MaiLField";
-            MaiLField.Size = new Size(302, 31);
+            MaiLField.Size = new Size(264, 23);
             MaiLField.TabIndex = 84;
             // 
             // NumberField
             // 
             NumberField.BackColor = Color.FromArgb(192, 255, 255);
             NumberField.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            NumberField.Location = new Point(213, 139);
+            NumberField.Location = new Point(186, 104);
             NumberField.Name = "NumberField";
-            NumberField.Size = new Size(305, 31);
+            NumberField.Size = new Size(267, 23);
             NumberField.TabIndex = 83;
             // 
             // SurnameField
             // 
             SurnameField.BackColor = Color.FromArgb(192, 255, 255);
             SurnameField.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            SurnameField.Location = new Point(213, 80);
+            SurnameField.Location = new Point(186, 60);
             SurnameField.Name = "SurnameField";
-            SurnameField.Size = new Size(305, 31);
+            SurnameField.Size = new Size(267, 23);
             SurnameField.TabIndex = 82;
             // 
             // NameFiled
             // 
             NameFiled.BackColor = Color.FromArgb(192, 255, 255);
             NameFiled.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            NameFiled.Location = new Point(213, 28);
+            NameFiled.Location = new Point(186, 21);
             NameFiled.Name = "NameFiled";
-            NameFiled.Size = new Size(305, 31);
+            NameFiled.Size = new Size(267, 23);
             NameFiled.TabIndex = 81;
             // 
             // MailLabel
             // 
             MailLabel.AutoSize = true;
             MailLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            MailLabel.Location = new Point(109, 194);
+            MailLabel.Location = new Point(95, 146);
             MailLabel.Name = "MailLabel";
-            MailLabel.Size = new Size(85, 26);
+            MailLabel.Size = new Size(69, 22);
             MailLabel.TabIndex = 80;
             MailLabel.Text = "Почта ";
             // 
@@ -153,9 +152,9 @@
             // 
             NumberLabel.AutoSize = true;
             NumberLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            NumberLabel.Location = new Point(7, 139);
+            NumberLabel.Location = new Point(6, 104);
             NumberLabel.Name = "NumberLabel";
-            NumberLabel.Size = new Size(196, 26);
+            NumberLabel.Size = new Size(158, 22);
             NumberLabel.TabIndex = 79;
             NumberLabel.Text = "Номер телефона ";
             // 
@@ -163,9 +162,9 @@
             // 
             SurnameLabel.AutoSize = true;
             SurnameLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            SurnameLabel.Location = new Point(81, 82);
+            SurnameLabel.Location = new Point(71, 62);
             SurnameLabel.Name = "SurnameLabel";
-            SurnameLabel.Size = new Size(115, 26);
+            SurnameLabel.Size = new Size(93, 22);
             SurnameLabel.TabIndex = 78;
             SurnameLabel.Text = "Фамилия";
             // 
@@ -173,21 +172,20 @@
             // 
             NameLabel.AutoSize = true;
             NameLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            NameLabel.Location = new Point(134, 27);
+            NameLabel.Location = new Point(117, 20);
             NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(60, 26);
+            NameLabel.Size = new Size(47, 22);
             NameLabel.TabIndex = 77;
             NameLabel.Text = "Имя";
             // 
             // EditingForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(525, 483);
+            ClientSize = new Size(459, 362);
             Controls.Add(MainPanel);
             Controls.Add(EntryLabel);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "EditingForm";
             Text = "EditingForm";
             Load += EditingForm_Load;
