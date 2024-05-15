@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             MyCollectionLabel = new Label();
-            NameLabel = new Label();
-            SelectedField = new TextBox();
-            ChoiseLabel = new Label();
-            choiseComboBox = new ComboBox();
-            createCollectionButton = new Button();
-            ViewCollectionsButton = new Button();
+            MainPanel = new Panel();
             BackButton = new Button();
+            ViewCollectionsButton = new Button();
+            createCollectionButton = new Button();
+            choiseComboBox = new ComboBox();
+            ChoiseLabel = new Label();
+            SelectedField = new TextBox();
+            NameLabel = new Label();
+            MainPanel.SuspendLayout();
             SuspendLayout();
             // 
             // MyCollectionLabel
@@ -45,82 +47,25 @@
             MyCollectionLabel.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             MyCollectionLabel.Location = new Point(0, 0);
             MyCollectionLabel.Name = "MyCollectionLabel";
-            MyCollectionLabel.Size = new Size(455, 72);
+            MyCollectionLabel.Size = new Size(520, 96);
             MyCollectionLabel.TabIndex = 1;
             MyCollectionLabel.Text = "Мои подборки";
             MyCollectionLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // NameLabel
+            // MainPanel
             // 
-            NameLabel.Anchor = AnchorStyles.None;
-            NameLabel.AutoSize = true;
-            NameLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
-            NameLabel.ImeMode = ImeMode.NoControl;
-            NameLabel.Location = new Point(24, 135);
-            NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(225, 26);
-            NameLabel.TabIndex = 75;
-            NameLabel.Text = "Название подборки";
-            // 
-            // SelectedField
-            // 
-            SelectedField.Anchor = AnchorStyles.None;
-            SelectedField.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            SelectedField.ForeColor = Color.Black;
-            SelectedField.Location = new Point(24, 164);
-            SelectedField.Name = "SelectedField";
-            SelectedField.Size = new Size(409, 32);
-            SelectedField.TabIndex = 76;
-            // 
-            // ChoiseLabel
-            // 
-            ChoiseLabel.Anchor = AnchorStyles.None;
-            ChoiseLabel.AutoSize = true;
-            ChoiseLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
-            ChoiseLabel.ImeMode = ImeMode.NoControl;
-            ChoiseLabel.Location = new Point(24, 226);
-            ChoiseLabel.Name = "ChoiseLabel";
-            ChoiseLabel.Size = new Size(200, 26);
-            ChoiseLabel.TabIndex = 77;
-            ChoiseLabel.Text = "Выбор маршрута";
-            // 
-            // choiseComboBox
-            // 
-            choiseComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            choiseComboBox.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            choiseComboBox.FormattingEnabled = true;
-            choiseComboBox.Location = new Point(24, 268);
-            choiseComboBox.Name = "choiseComboBox";
-            choiseComboBox.Size = new Size(409, 31);
-            choiseComboBox.TabIndex = 78;
-            // 
-            // createCollectionButton
-            // 
-            createCollectionButton.BackColor = Color.Cyan;
-            createCollectionButton.FlatAppearance.BorderSize = 0;
-            createCollectionButton.FlatStyle = FlatStyle.Flat;
-            createCollectionButton.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            createCollectionButton.Location = new Point(131, 336);
-            createCollectionButton.Name = "createCollectionButton";
-            createCollectionButton.Size = new Size(191, 36);
-            createCollectionButton.TabIndex = 79;
-            createCollectionButton.Text = "Создать подборку";
-            createCollectionButton.UseVisualStyleBackColor = false;
-            createCollectionButton.Click += createCollectionButton_Click;
-            // 
-            // ViewCollectionsButton
-            // 
-            ViewCollectionsButton.BackColor = Color.Cyan;
-            ViewCollectionsButton.FlatAppearance.BorderSize = 0;
-            ViewCollectionsButton.FlatStyle = FlatStyle.Flat;
-            ViewCollectionsButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            ViewCollectionsButton.Location = new Point(146, 378);
-            ViewCollectionsButton.Name = "ViewCollectionsButton";
-            ViewCollectionsButton.Size = new Size(157, 29);
-            ViewCollectionsButton.TabIndex = 80;
-            ViewCollectionsButton.Text = "Просмотр подборок";
-            ViewCollectionsButton.UseVisualStyleBackColor = false;
-            ViewCollectionsButton.Click += ViewCollectionsButton_Click;
+            MainPanel.Controls.Add(BackButton);
+            MainPanel.Controls.Add(ViewCollectionsButton);
+            MainPanel.Controls.Add(createCollectionButton);
+            MainPanel.Controls.Add(choiseComboBox);
+            MainPanel.Controls.Add(ChoiseLabel);
+            MainPanel.Controls.Add(SelectedField);
+            MainPanel.Controls.Add(NameLabel);
+            MainPanel.Dock = DockStyle.Fill;
+            MainPanel.Location = new Point(0, 96);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new Size(520, 504);
+            MainPanel.TabIndex = 2;
             // 
             // BackButton
             // 
@@ -128,44 +73,117 @@
             BackButton.FlatAppearance.BorderSize = 0;
             BackButton.FlatStyle = FlatStyle.Flat;
             BackButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            BackButton.Location = new Point(146, 413);
+            BackButton.Location = new Point(167, 418);
+            BackButton.Margin = new Padding(3, 4, 3, 4);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(157, 29);
-            BackButton.TabIndex = 81;
+            BackButton.Size = new Size(179, 39);
+            BackButton.TabIndex = 88;
             BackButton.Text = "Назад";
             BackButton.UseVisualStyleBackColor = false;
-            BackButton.Click += BackButton_Click;
+            // 
+            // ViewCollectionsButton
+            // 
+            ViewCollectionsButton.BackColor = Color.Cyan;
+            ViewCollectionsButton.FlatAppearance.BorderSize = 0;
+            ViewCollectionsButton.FlatStyle = FlatStyle.Flat;
+            ViewCollectionsButton.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            ViewCollectionsButton.Location = new Point(167, 371);
+            ViewCollectionsButton.Margin = new Padding(3, 4, 3, 4);
+            ViewCollectionsButton.Name = "ViewCollectionsButton";
+            ViewCollectionsButton.Size = new Size(179, 39);
+            ViewCollectionsButton.TabIndex = 87;
+            ViewCollectionsButton.Text = "Просмотр подборок";
+            ViewCollectionsButton.UseVisualStyleBackColor = false;
+            ViewCollectionsButton.Click += ViewCollectionsButton_Click;
+            // 
+            // createCollectionButton
+            // 
+            createCollectionButton.BackColor = Color.Cyan;
+            createCollectionButton.FlatAppearance.BorderSize = 0;
+            createCollectionButton.FlatStyle = FlatStyle.Flat;
+            createCollectionButton.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            createCollectionButton.Location = new Point(150, 315);
+            createCollectionButton.Margin = new Padding(3, 4, 3, 4);
+            createCollectionButton.Name = "createCollectionButton";
+            createCollectionButton.Size = new Size(218, 48);
+            createCollectionButton.TabIndex = 86;
+            createCollectionButton.Text = "Создать подборку";
+            createCollectionButton.UseVisualStyleBackColor = false;
+            // 
+            // choiseComboBox
+            // 
+            choiseComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            choiseComboBox.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            choiseComboBox.FormattingEnabled = true;
+            choiseComboBox.Location = new Point(27, 224);
+            choiseComboBox.Margin = new Padding(3, 4, 3, 4);
+            choiseComboBox.Name = "choiseComboBox";
+            choiseComboBox.Size = new Size(467, 37);
+            choiseComboBox.TabIndex = 85;
+            // 
+            // ChoiseLabel
+            // 
+            ChoiseLabel.Anchor = AnchorStyles.None;
+            ChoiseLabel.AutoSize = true;
+            ChoiseLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
+            ChoiseLabel.ImeMode = ImeMode.NoControl;
+            ChoiseLabel.Location = new Point(27, 168);
+            ChoiseLabel.Name = "ChoiseLabel";
+            ChoiseLabel.Size = new Size(250, 35);
+            ChoiseLabel.TabIndex = 84;
+            ChoiseLabel.Text = "Выбор маршрута";
+            // 
+            // SelectedField
+            // 
+            SelectedField.Anchor = AnchorStyles.None;
+            SelectedField.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            SelectedField.ForeColor = Color.Black;
+            SelectedField.Location = new Point(27, 86);
+            SelectedField.Margin = new Padding(3, 4, 3, 4);
+            SelectedField.Name = "SelectedField";
+            SelectedField.Size = new Size(467, 38);
+            SelectedField.TabIndex = 83;
+            // 
+            // NameLabel
+            // 
+            NameLabel.Anchor = AnchorStyles.None;
+            NameLabel.AutoSize = true;
+            NameLabel.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
+            NameLabel.ImeMode = ImeMode.NoControl;
+            NameLabel.Location = new Point(27, 47);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(276, 35);
+            NameLabel.TabIndex = 82;
+            NameLabel.Text = "Название подборки";
             // 
             // MyCollectionsForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(455, 450);
-            Controls.Add(BackButton);
-            Controls.Add(ViewCollectionsButton);
-            Controls.Add(createCollectionButton);
-            Controls.Add(choiseComboBox);
-            Controls.Add(ChoiseLabel);
-            Controls.Add(SelectedField);
-            Controls.Add(NameLabel);
+            ClientSize = new Size(520, 600);
+            Controls.Add(MainPanel);
             Controls.Add(MyCollectionLabel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MyCollectionsForm";
             Text = "MyCollectionsForm";
             Load += MyCollectionsForm_Load;
+            Resize += MyCollectionsForm_Resize;
+            MainPanel.ResumeLayout(false);
+            MainPanel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Label MyCollectionLabel;
-        private Label NameLabel;
-        private TextBox SelectedField;
-        private Label ChoiseLabel;
-        private ComboBox choiseComboBox;
-        private Button createCollectionButton;
-        private Button ViewCollectionsButton;
+        private Panel MainPanel;
         private Button BackButton;
+        private Button ViewCollectionsButton;
+        private Button createCollectionButton;
+        private ComboBox choiseComboBox;
+        private Label ChoiseLabel;
+        private TextBox SelectedField;
+        private Label NameLabel;
     }
 }

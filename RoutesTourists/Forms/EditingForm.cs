@@ -28,12 +28,12 @@ namespace RoutesTourists.Forms
 
         private void EditingButton_Click(object sender, EventArgs e)
         {
-            if(NameFiled.Text == string.Empty)
+            if (NameFiled.Text == string.Empty)
             {
                 MessageBox.Show("Поле для имени обязательно для заполнения");
                 return;
             }
-            if(SurnameField.Text == string.Empty)
+            if (SurnameField.Text == string.Empty)
             {
                 MessageBox.Show("Поле для фамилии обязательно для заполения");
                 return;
@@ -43,7 +43,7 @@ namespace RoutesTourists.Forms
                 MessageBox.Show("Поле для номера телефона обязательно для заполнения");
                 return;
             }
-            if(MaiLField.Text == string.Empty)
+            if (MaiLField.Text == string.Empty)
             {
                 MessageBox.Show("Поле для почты обязательно для заполнения");
                 return;
@@ -82,6 +82,24 @@ namespace RoutesTourists.Forms
                 currUser.Mail = MaiLField.Text;
                 context.SaveChanges();
             }
+        }
+
+        private void EditingForm_Resize(object sender, EventArgs e)
+        {
+            NameLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 27;
+            NameLabel.Left = (int)(MainPanel.Width * 0.6) + 10;
+            SurnameLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 85;
+            SurnameLabel.Left = (int)(MainPanel.Width * 0.6) - 30;
+            SurnameField.Top = (int)((MainPanel.Height + 103) * 0.05) + 85;
+            SurnameField.Left = (int)(MainPanel.Width * 0.65) + 50;
+            SurnameField.Width = (int)((MainPanel.Width - 20) * 0.27);
+            NumberLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 150;
+            NumberLabel.Left = (int)(MainPanel.Width * 0.6) - 25;
+            NumberField.Top = (int)((MainPanel.Height + 103) * 0.05) + 150;
+            NumberField.Left = (int)(MainPanel.Width * 0.65) + 50;
+            NumberField.Width = (int)((MainPanel.Width - 20) * 0.27);
+            MailLabel.Top = (int)((MainPanel.Height + 103) * 0.05) + 220;
+            MailLabel.Left = (int)(MainPanel.Width * 0.6) - 10;
         }
     }
 }

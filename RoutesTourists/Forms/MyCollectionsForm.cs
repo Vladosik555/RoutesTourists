@@ -16,10 +16,12 @@ namespace RoutesTourists.Forms
         public MyCollectionsForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void MyCollectionsForm_Load(object sender, EventArgs e)
         {
+            ClientSize = new Size(918, 575);
             using (var context = new RoutesForTouristsContext())
             {
                 if (CurrentUser.currentUser.AnotherRoutes != null)
@@ -50,7 +52,7 @@ namespace RoutesTourists.Forms
                 }
             }
         }
-        
+
         private void createCollectionButton_Click(object sender, EventArgs e)
         {
             if (SelectedField.Text == string.Empty)
@@ -58,7 +60,7 @@ namespace RoutesTourists.Forms
                 MessageBox.Show("Поле для названии подборки добжно быть заполнено");
                 return;
             }
-            if(choiseComboBox.Text.ToString() == null)
+            if (choiseComboBox.Text.ToString() == null)
             {
                 MessageBox.Show("Выберите маршрут");
                 return;
@@ -115,7 +117,7 @@ namespace RoutesTourists.Forms
         private void ViewCollectionsButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SelectionForm selectionForm = new SelectionForm();  
+            SelectionForm selectionForm = new SelectionForm();
             selectionForm.ShowDialog();
         }
 
@@ -124,6 +126,34 @@ namespace RoutesTourists.Forms
             this.Hide();
             HomeForm homeForm = new HomeForm();
             homeForm.ShowDialog();
+        }
+
+        private void MyCollectionsForm_Resize(object sender, EventArgs e)
+        {
+            NameLabel.Top = (int)((MainPanel.Height + 103) * 0.07);
+            NameLabel.Left = (int)(MainPanel.Width * 0.06);
+            SelectedField.Top = (int)((MainPanel.Height + 103) * 0.07) + NameLabel.Height + 15;
+            SelectedField.Left = (int)(MainPanel.Width * 0.06);
+            SelectedField.Width = (int)(MainPanel.Width * 0.9);
+            ChoiseLabel.Top = (int)((MainPanel.Height + 103) * 0.07) + NameLabel.Height + SelectedField.Height + 30;
+            ChoiseLabel.Left = (int)(MainPanel.Width * 0.06);
+            choiseComboBox.Top = (int)((MainPanel.Height + 103) * 0.07) + NameLabel.Height + SelectedField.Height + ChoiseLabel.Height + 45;
+            choiseComboBox.Left = (int)(MainPanel.Width * 0.06);
+            choiseComboBox.Width = (int)(MainPanel.Width * 0.9);
+
+            createCollectionButton.Width = (int)((MainPanel.Width - 20) * 0.4);
+            createCollectionButton.Height = (int)((MainPanel.Height + 103) * 0.08);
+            createCollectionButton.Top = (int)((MainPanel.Height + 103) * 0.4) + 45;
+            createCollectionButton.Left = (int)(MainPanel.Width * 0.35) - 20;
+            ViewCollectionsButton.Width = (int)((MainPanel.Width - 20) * 0.35);
+            ViewCollectionsButton.Height = (int)((MainPanel.Height + 103) * 0.07);
+            ViewCollectionsButton.Top = (int)((MainPanel.Height + 103) * 0.4)  + createCollectionButton.Height + 65;
+            ViewCollectionsButton.Left = (int)(MainPanel.Width * 0.35) - 5;
+            BackButton.Width = (int)((MainPanel.Width - 20) * 0.35);
+            BackButton.Height = (int)((MainPanel.Height + 103) * 0.07);
+            BackButton.Top = (int)((MainPanel.Height + 103) * 0.4) + createCollectionButton.Height + ViewCollectionsButton.Height + 75;
+            BackButton.Left = (int)(MainPanel.Width * 0.35) - 5;
+
         }
     }
 }

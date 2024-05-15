@@ -16,10 +16,12 @@ namespace RoutesTourists.Forms
         public AllSelectionForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void AllSelectionForm_Load(object sender, EventArgs e)
         {
+            ClientSize = new Size(918, 575);
             using (var context = new RoutesForTouristsContext())
             {
                 var selectionRoutes = context.Routes.Where(r => r.LikesSelection == 5).ToList();
@@ -34,7 +36,7 @@ namespace RoutesTourists.Forms
             {
                 DataGridViewRow selectedRow = AllSelectionTable.Rows[e.RowIndex];
                 int position = (int)selectedRow.Cells["Позиция"].Value;
-                if(CurrentRoutes.currentRoutes[position - 1] == null)
+                if (CurrentRoutes.currentRoutes[position - 1] == null)
                 {
                     MessageBox.Show("Данный маршрут не был найден");
                     return;
@@ -51,6 +53,15 @@ namespace RoutesTourists.Forms
             this.Hide();
             HomeForm homeForm = new HomeForm();
             homeForm.ShowDialog();
+        }
+
+        private void AllSelectionForm_Resize(object sender, EventArgs e)
+        {
+            AllSelectionTable.Height = (int)((MainPanel.Height + 103) * 0.6);
+            BackButton.Width = (int)((MainPanel.Width - 20) * 0.3);
+            BackButton.Height = (int)((MainPanel.Height + 103) * 0.075);
+            BackButton.Top = (int)((MainPanel.Height + 103) * 0.1) + AllSelectionTable.Height;
+            BackButton.Left = (int)(MainPanel.Width * 0.35);
         }
     }
 }

@@ -18,6 +18,7 @@ namespace RoutesTourists.Forms
         public LoginVKForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void phoneNumberField_Enter(object sender, EventArgs e)
@@ -107,8 +108,8 @@ namespace RoutesTourists.Forms
                         });
                         string accessToken = vkApi.Token;
                         var user = vkApi.Users.Get(new long[] { vkApi.UserId.Value }, ProfileFields.Photo50).FirstOrDefault();
-                        var currAccount = context.Accounts.FirstOrDefault(r=>r.Login.Equals(phoneNumberField.Text) && r.Password.Equals(Hash.CalculateMD5Hash(passwordField.Text)));
-                        if(currAccount == null)
+                        var currAccount = context.Accounts.FirstOrDefault(r => r.Login.Equals(phoneNumberField.Text) && r.Password.Equals(Hash.CalculateMD5Hash(passwordField.Text)));
+                        if (currAccount == null)
                         {
 
                             string id = Guid.NewGuid().ToString();
@@ -135,7 +136,7 @@ namespace RoutesTourists.Forms
                         else
                         {
                             var currUser = context.Users.FirstOrDefault(r => r.IdAccount.Equals(currAccount.Id));
-                            if(currUser == null)
+                            if (currUser == null)
                             {
                                 MessageBox.Show("Ошибка в подключении к базе данных");
                                 return;
@@ -158,6 +159,41 @@ namespace RoutesTourists.Forms
                 MessageBox.Show("Ошибка в подключении к базе данных");
                 return;
             }
+        }
+
+        private void LoginVKForm_Resize(object sender, EventArgs e)
+        {
+            loginLabel.Top = (int)((MainPanel.Height + 103) * 0.04);
+            loginLabel.Left = (int)(MainPanel.Width * 0.3);
+            phoneNumberField.Top = (int)((MainPanel.Height + 103) * 0.04) + loginLabel.Height + 10;
+            phoneNumberField.Left = (int)(MainPanel.Width * 0.3);
+            phoneNumberField.Width = (int)(MainPanel.Width * 0.4);
+            passwordLabel.Top = (int)((MainPanel.Height + 103) * 0.04) + loginLabel.Height + phoneNumberField.Height + 25;
+            passwordLabel.Left = (int)(MainPanel.Width * 0.3);
+            passwordField.Top = (int)((MainPanel.Height + 103) * 0.04) + loginLabel.Height + phoneNumberField.Height + passwordLabel.Height + 35;
+            passwordField.Left = (int)(MainPanel.Width * 0.3);
+            passwordField.Width = (int)(MainPanel.Width * 0.4);
+            showCheckBox.Top = (int)((MainPanel.Height + 103) * 0.04) + loginLabel.Height + phoneNumberField.Height + passwordLabel.Height + passwordField.Height + 40;
+            showCheckBox.Left = (int)(MainPanel.Width * 0.3);
+            CodeConfirmationLabel.Top = (int)((MainPanel.Height + 103) * 0.04) + loginLabel.Height + phoneNumberField.Height + passwordLabel.Height + passwordField.Height + showCheckBox.Height + 55;
+            CodeConfirmationLabel.Left = (int)(MainPanel.Width * 0.3);
+            CodeConfirmationField.Top = (int)((MainPanel.Height + 103) * 0.04) + loginLabel.Height + phoneNumberField.Height + passwordLabel.Height + passwordField.Height + showCheckBox.Height + 70;
+            CodeConfirmationField.Left = (int)(MainPanel.Width * 0.3);
+            CodeConfirmationField.Width = (int)(MainPanel.Width * 0.4);
+
+            LoginVKButton.Width = (int)((MainPanel.Width - 20) * 0.39);
+            LoginVKButton.Height = (int)((MainPanel.Height + 103) * 0.115);
+            LoginVKButton.Top = (int)((MainPanel.Height + 103) * 0.4) + phoneNumberField.Height + passwordField.Height + 30;
+            LoginVKButton.Left = (int)(MainPanel.Width * 0.3);
+            BackButton.Width = (int)((MainPanel.Width - 20) * 0.3);
+            BackButton.Height = (int)((MainPanel.Height + 103) * 0.075);
+            BackButton.Top = (int)((MainPanel.Height + 103) * 0.4) + LoginVKButton.Height + phoneNumberField.Height + passwordField.Height + 35;
+            BackButton.Left = (int)(MainPanel.Width * 0.35);
+        }
+
+        private void LoginVKForm_Load(object sender, EventArgs e)
+        {
+            ClientSize = new Size(918, 575);
         }
     }
 }

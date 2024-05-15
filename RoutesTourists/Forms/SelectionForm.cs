@@ -16,10 +16,12 @@ namespace RoutesTourists.Forms
         public SelectionForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void SelectionForm_Load(object sender, EventArgs e)
         {
+            ClientSize = new Size(918, 575);
             using (var context = new RoutesForTouristsContext())
             {
                 List<Selection> selections = new List<Selection>();
@@ -29,7 +31,7 @@ namespace RoutesTourists.Forms
                     MessageBox.Show("Ошибка в подключении базы данных");
                     return;
                 }
-                if(currUser.IdSelection != null)
+                if (currUser.IdSelection != null)
                 {
                     foreach (string id in currUser.IdSelection.Split(","))
                     {
@@ -49,7 +51,7 @@ namespace RoutesTourists.Forms
             {
                 DataGridViewRow selectedRow = SelectionTable.Rows[e.RowIndex];
                 int position = (int)selectedRow.Cells["Позиция"].Value;
-                if(CurrentSelections.currentSelections[position - 1] == null)
+                if (CurrentSelections.currentSelections[position - 1] == null)
                 {
                     MessageBox.Show("Данный маршрут не был найден");
                     return;
@@ -66,6 +68,15 @@ namespace RoutesTourists.Forms
             this.Close();
             MyCollectionsForm myCollectionsForm = new MyCollectionsForm();
             myCollectionsForm.ShowDialog();
+        }
+
+        private void SelectionForm_Resize(object sender, EventArgs e)
+        {
+            SelectionTable.Height = (int)((MainPanel.Height + 103) * 0.6);
+            BackButton.Width = (int)((MainPanel.Width - 20) * 0.3);
+            BackButton.Height = (int)((MainPanel.Height + 103) * 0.075);
+            BackButton.Top = (int)((MainPanel.Height + 103) * 0.1) + SelectionTable.Height;
+            BackButton.Left = (int)(MainPanel.Width * 0.35);
         }
     }
 }
